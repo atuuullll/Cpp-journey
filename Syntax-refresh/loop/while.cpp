@@ -6,4 +6,17 @@ int main(){
         cout<<i<<endl;
         i++;
     }
+
+    cout<<"New code"<<endl;
+    cout<<"This is a Fibonacci series"<<endl;
+
+    int a=0;
+    int b=1;
+    while(a<=10){
+        cout<<a<<endl;
+        int c=a+b;
+        a=b;
+        b=c;
+    }
 }
+
