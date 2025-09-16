@@ -18,5 +18,15 @@ int main(){
         a=b;
         b=c;
     }
+
+    cout<<"New code"<<endl;
+    cout<<"This is a multiplication table of 7"<<endl;
+
+    int n=7;
+    int j=1;
+    while(j<=10){
+        cout<<n*j<<endl;
+        j++;
+    }
 }
 
