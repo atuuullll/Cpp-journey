@@ -28,5 +28,14 @@ int main(){
         cout<<n*j<<endl;
         j++;
     }
+
+    cout<<"New code"<<endl;
+    cout<<"This is a series of odd numbers"<<endl;
+
+    int k=1;
+    while(k<=10){
+        cout<<k<<endl;
+        k=k+2;
+    }
 }
 
