@@ -37,5 +37,14 @@ int main(){
         cout<<k<<endl;
         k=k+2;
     }
+
+    cout<<"New code"<<endl;
+    cout<<"This is a series of even numbers"<<endl;
+
+    int x=0;
+    while(x<=10){
+        cout<<x<<endl;
+        x=x+2;
+    }
 }
 
