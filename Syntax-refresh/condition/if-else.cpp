@@ -11,6 +11,7 @@ int main(){
         cout<<"You are an adult"<<endl;
     }
 
+    cout<<endl;
     cout<<"New code"<<endl;
 
     int i;
