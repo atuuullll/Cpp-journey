@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/workspaces/Cpp-journey/Syntax-refresh",
-      "program": "/workspaces/Cpp-journey/Syntax-refresh/build/Debug/outDebug",
+      "cwd": "/workspaces/Cpp-journey/Syntax-refresh/loop",
+      "program": "/workspaces/Cpp-journey/Syntax-refresh/loop/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
