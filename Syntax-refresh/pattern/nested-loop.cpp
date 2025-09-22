@@ -75,13 +75,26 @@ int main(){
     // }
     // return 0;
 
+    // int n=4;
+    // int num=1;
+    // for(int i=1;i<=n;i++){
+    //     for(int j=1;j<=i;j++){
+    //         cout<<num++<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+
+    //inverted and rotated half pyramid with stars
     int n=4;
-    int num=1;
     for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            cout<<num++<<" ";
+        for(int j=1;j<=n-i;j++){
+            cout<<"  ";
+        }
+        for(int k=1;k<=i;k++){
+            cout<<" *";
         }
         cout<<endl;
     }
+    return 0;
 }
 
