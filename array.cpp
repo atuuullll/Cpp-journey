@@ -29,13 +29,25 @@ int main(){
     // }
     // return 0;
 
-    int arr[5]={2,4,6,8,10};
-    cout<<"The array elements are: "<<endl;
-    int i;
-    for(i=0;i<5;i++){
-        cout<<arr[i]<<endl;
-    }
-    cout<<"The size of array is: "<<sizeof(arr)<<endl;
-    cout<<"The number of elements in array is: "<<sizeof(arr)/sizeof(arr[0])<<endl;
+    // int arr[5]={2,4,6,8,10};
+    // cout<<"The array elements are: "<<endl;
+    // int i;
+    // for(i=0;i<5;i++){
+    //     cout<<arr[i]<<endl;
+    // }
+    // cout<<"The size of array is: "<<sizeof(arr)<<endl;
+    // cout<<"The number of elements in array is: "<<sizeof(arr)/sizeof(arr[0])<<endl;
+    // return 0;
+
+
+    int arr[] = {2, 4, 8, 12, 16};
+    
+    // Accessing fourth element
+    cout << arr[3] << " ";
+    
+    // Accessing first element
+    cout << arr[0];
+    cout<<endl;
+    
     return 0;
 }
