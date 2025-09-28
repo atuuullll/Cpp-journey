@@ -9,4 +9,6 @@ int main(){
     cout<<"I am enjoying it very much."<<endl;
     cout<<"I hope I will become a good programmer very soon."<<endl;
     cout<<"Thank you!!"<<endl;
+
+    cout<<"This is the end of the program."<<endl;
 }
