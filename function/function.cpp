@@ -14,7 +14,15 @@ void secondfunction(int a, int b){
     cout<<"Value of b is: "<<b<<endl;
     cout<<"The sum of a and b is: "<<a+b<<endl;
 }
+
+void product(int a, int b){
+    cout<<"The sum of a and b is: "<<a*b<<endl;
+}
+void diff(int a, int b){
+    cout<<"The difference of a and b is: "<<a-b<<endl;
+}
 int main(){
-    secondfunction(4,5);
+    product(4,5);
+    diff(5,4);
     return 0;
 }
