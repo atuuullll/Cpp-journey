@@ -7,11 +7,11 @@ void fibonacci(int n){
     int b=1;
     cout<<b<<" ";
     int k=a+b;
-    for(int i=1; i<=n; i++){
-        cout<<k<<" ";
-        a=b;
-        b=k;
-        k=a+b;
+    while (k <= n) {
+        cout << k << " ";
+        a = b;
+        b = k;
+        k = a + b;
     }
     cout<<endl;
 }
