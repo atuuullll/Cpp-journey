@@ -39,7 +39,6 @@ int main(){
     // cout<<"The number of elements in array is: "<<sizeof(arr)/sizeof(arr[0])<<endl;
     // return 0;
 
-
     int arr[] = {2, 4, 8, 12, 16};
     cout<<"The array elements are: "<<endl;
     int i;

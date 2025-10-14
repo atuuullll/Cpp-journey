@@ -8,6 +8,8 @@ int factorial(int n){
     }
     return fact;
 }
+
+//Formula: n!/(r!*(n-r)!)
 int binCoeff(int n, int r){
     int val1= factorial(n);
     int val2= factorial(r);
