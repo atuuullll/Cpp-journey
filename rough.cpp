@@ -21,21 +21,31 @@ int main(){
     // return 0;
 
     //palindrome number checking
-    int n,k,a,b;
+    // int n,k,a,b;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+    // k=n;
+    // a=0;
+    // while(n>0){
+    //     b=n%10;
+    //     a=a*10+b;
+    //     n=n/10; 
+    // }
+    // if(a==k){
+    //     cout<<"The number is a palindrome number"<<endl;
+    // }
+    // else{
+    //     cout<<"The number is not a palindrome number"<<endl;
+    // }
+    // return 0;
+
+    //factorial of a number
+    int n,fact=1,i;
     cout<<"Enter a number: ";
     cin>>n;
-    k=n;
-    a=0;
-    while(n>0){
-        b=n%10;
-        a=a*10+b;
-        n=n/10; 
+    for(i=1;i<=n;i++){
+        fact=fact*i;
     }
-    if(a==k){
-        cout<<"The number is a palindrome number"<<endl;
-    }
-    else{
-        cout<<"The number is not a palindrome number"<<endl;
-    }
+    cout<<"The factorial of "<<n<<" is "<<fact<<endl;
     return 0;
-}   
+}
