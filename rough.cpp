@@ -40,12 +40,25 @@ int main(){
     // return 0;
 
     //factorial of a number
-    int n,fact=1,i;
-    cout<<"Enter a number: ";
+    // int n,fact=1,i;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+    // for(i=1;i<=n;i++){
+    //     fact=fact*i;
+    // }
+    // cout<<"The factorial of "<<n<<" is "<<fact<<endl;
+    // return 0;
+
+    // Fibonacci series up to n terms
+    int n,a=0,b=1,c,i;
+    cout<<"Enter the number of terms: ";
     cin>>n;
+    cout<<"Fibonacci series up to "<<n<<" terms is: "<<endl;
     for(i=1;i<=n;i++){
-        fact=fact*i;
+        cout<<a<<" ";
+        c=a+b;
+        a=b;
+        b=c;
     }
-    cout<<"The factorial of "<<n<<" is "<<fact<<endl;
     return 0;
 }
