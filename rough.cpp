@@ -63,12 +63,30 @@ int main(){
     // return 0;
 
     // Print multiplication table of a number
-    int n,i;
+    // int n,i;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+    // cout<<"Multiplication table of "<<n<<" is: "<<endl;
+    // for(i=1;i<=10;i++){
+    //     cout<<n<<" x "<<i<<" = "<<n*i<<endl;    
+    // }
+    // return 0;
+
+    // Print all prime numbers up to n
+    int n,i,j,flag;
     cout<<"Enter a number: ";
     cin>>n;
-    cout<<"Multiplication table of "<<n<<" is: "<<endl;
-    for(i=1;i<=10;i++){
-        cout<<n<<" x "<<i<<" = "<<n*i<<endl;    
+    cout<<"Prime numbers up to "<<n<<" are: "<<endl;
+    for(i=2;i<=n;i++){
+        flag=0;
+        for(j=2;j<=i/2;j++){
+            if(i%j==0){
+                flag=1;
+                break;  
+            }
+        }
+        if(flag==0){
+            cout<<i<<" ";
+        }   
     }
-    return 0;
 }
