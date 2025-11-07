@@ -50,15 +50,25 @@ int main(){
     // return 0;
 
     // Fibonacci series up to n terms
-    int n,a=0,b=1,c,i;
-    cout<<"Enter the number of terms: ";
+    // int n,a=0,b=1,c,i;
+    // cout<<"Enter the number of terms: ";
+    // cin>>n;
+    // cout<<"Fibonacci series up to "<<n<<" terms is: "<<endl;
+    // for(i=1;i<=n;i++){
+    //     cout<<a<<" ";
+    //     c=a+b;
+    //     a=b;
+    //     b=c;
+    // }
+    // return 0;
+
+    // Print multiplication table of a number
+    int n,i;
+    cout<<"Enter a number: ";
     cin>>n;
-    cout<<"Fibonacci series up to "<<n<<" terms is: "<<endl;
-    for(i=1;i<=n;i++){
-        cout<<a<<" ";
-        c=a+b;
-        a=b;
-        b=c;
+    cout<<"Multiplication table of "<<n<<" is: "<<endl;
+    for(i=1;i<=10;i++){
+        cout<<n<<" x "<<i<<" = "<<n*i<<endl;    
     }
     return 0;
 }
