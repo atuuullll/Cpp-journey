@@ -73,20 +73,34 @@ int main(){
     // return 0;
 
     // Print all prime numbers up to n
-    int n,i,j,flag;
-    cout<<"Enter a number: ";
-    cin>>n;
-    cout<<"Prime numbers up to "<<n<<" are: "<<endl;
-    for(i=2;i<=n;i++){
-        flag=0;
-        for(j=2;j<=i/2;j++){
-            if(i%j==0){
-                flag=1;
-                break;  
-            }
-        }
-        if(flag==0){
-            cout<<i<<" ";
-        }   
+    // int n,i,j,flag;
+    // cout<<"Enter a number: ";
+    // cin>>n;
+    // cout<<"Prime numbers up to "<<n<<" are: "<<endl;
+    // for(i=2;i<=n;i++){
+    //     flag=0;
+    //     for(j=2;j<=i/2;j++){
+    //         if(i%j==0){
+    //             flag=1;
+    //             break;  
+    //         }
+    //     }
+    //     if(flag==0){
+    //         cout<<i<<" ";
+    //     }   
+    //}
+
+    //missing number in an array
+    int arr[] = {1, 2, 4, 5, 6};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int total = (n + 1) * (n + 2) / 2;
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+        sum += arr[i];  
+        cout<<arr[i]<<" ";
     }
+    int missing_number = total - sum;
+    cout<<endl;
+    cout<<"The missing number is: "<<missing_number<<endl;
+    return 0;
 }
