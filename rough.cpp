@@ -120,21 +120,41 @@ int main(){
     // return 0;
 
     // Count vowels and consonants in a string
-    string str;
-    int vowels = 0, consonants = 0;
-    cout<<"Enter a string: ";
-    getline(cin, str);
-    for(char c : str){
-        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')){
-            c = tolower(c);
-            if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
-                vowels++;
-            } else {
-                consonants++;   
-            }
+    // string str;
+    // int vowels = 0, consonants = 0;
+    // cout<<"Enter a string: ";
+    // getline(cin, str);
+    // for(char c : str){
+    //     if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')){
+    //         c = tolower(c);
+    //         if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
+    //             vowels++;
+    //         } else {
+    //             consonants++;   
+    //         }
+    //     }
+    // }
+    // cout<<"Number of vowels: "<<vowels<<endl;
+    // cout<<"Number of consonants: "<<consonants<<endl;
+    // return 0;
+
+    // Find the largest and smallest elements in an array
+    int arr[] = {34, -2, 45, 0, 11, -9};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int largest = arr[0];
+    int smallest = arr[0];
+    for(int i = 1; i < n; i++){
+        if(arr[i] > largest){
+            largest = arr[i];   
+        }
+        if(arr[i] < smallest){
+            smallest = arr[i];   
+        }
+        else{
+            continue;   
         }
     }
-    cout<<"Number of vowels: "<<vowels<<endl;
-    cout<<"Number of consonants: "<<consonants<<endl;
+    cout<<"Largest element: "<<largest<<endl;
+    cout<<"Smallest element: "<<smallest<<endl;
     return 0;
 }
