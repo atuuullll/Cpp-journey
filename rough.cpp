@@ -105,17 +105,36 @@ int main(){
     // return 0;
 
     // Reverse an array
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    cout<<"Original array: ";
-    for(int i = 0; i < n; i++){
-        cout<<arr[i]<<" ";  
+    // int arr[] = {1, 2, 3, 4, 5};
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // cout<<"Original array: ";
+    // for(int i = 0; i < n; i++){
+    //     cout<<arr[i]<<" ";  
+    // }
+    // cout<<endl;
+    // cout<<"Reversed array: ";
+    // for(int i = n - 1; i >= 0; i--){
+    //     cout<<arr[i]<<" ";  
+    // }
+    // cout<<endl;
+    // return 0;
+
+    // Count vowels and consonants in a string
+    string str;
+    int vowels = 0, consonants = 0;
+    cout<<"Enter a string: ";
+    getline(cin, str);
+    for(char c : str){
+        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')){
+            c = tolower(c);
+            if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
+                vowels++;
+            } else {
+                consonants++;   
+            }
+        }
     }
-    cout<<endl;
-    cout<<"Reversed array: ";
-    for(int i = n - 1; i >= 0; i--){
-        cout<<arr[i]<<" ";  
-    }
-    cout<<endl;
+    cout<<"Number of vowels: "<<vowels<<endl;
+    cout<<"Number of consonants: "<<consonants<<endl;
     return 0;
 }
