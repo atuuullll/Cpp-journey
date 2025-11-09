@@ -39,22 +39,42 @@ int main(){
     // cout<<"The number of elements in array is: "<<sizeof(arr)/sizeof(arr[0])<<endl;
     // return 0;
 
-    int arr[] = {2, 4, 8, 12, 16};
+    // int arr[] = {2, 4, 8, 12, 16};
+    // cout<<"The array elements are: "<<endl;
+    // int i;
+    // for(i=0;i<sizeof(arr)/sizeof(arr[0]);i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;
+    // cout<<"Fourth element: ";
+    // cout << arr[3] << " ";
+    // cout<<endl;
+    // cout<<"First element: ";
+    // cout << arr[0];
+    // cout<<endl;
+    // cout<<"Last element: ";
+    // cout << arr[sizeof(arr)/sizeof(arr[0]) - 1];
+    // cout<<endl;
+    
+    //return 0;
+
+    int arr[] = {23,4,34,51,56};
+    int n = sizeof(arr)/sizeof(arr[0]);
     cout<<"The array elements are: "<<endl;
-    int i;
-    for(i=0;i<sizeof(arr)/sizeof(arr[0]);i++){
+    for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    cout<<"Fourth element: ";
-    cout << arr[3] << " ";
-    cout<<endl;
-    cout<<"First element: ";
-    cout << arr[0];
-    cout<<endl;
-    cout<<"Last element: ";
-    cout << arr[sizeof(arr)/sizeof(arr[0]) - 1];
-    cout<<endl;
-    
+    int largest = arr[0];
+    int smallest = arr[0];
+    for(int i = 1; i < n; i++){
+        if(arr[i] > largest){
+            largest = arr[i];
+        }
+        else
+        smallest = arr[i];
+    }
+    cout<<"The largest element is: "<<largest<<endl;
+    cout<<"The smallest element is: "<<smallest<<endl;
     return 0;
 }
