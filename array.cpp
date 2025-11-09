@@ -58,23 +58,38 @@ int main(){
     
     //return 0;
 
-    int arr[] = {23,4,34,51,56};
+    //largest and smallest element in an array
+    // int arr[] = {23,4,34,51,56};
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // cout<<"The array elements are: "<<endl;
+    // for(int i=0;i<n;i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;
+    // int largest = arr[0];
+    // int smallest = arr[0];
+    // for(int i = 1; i < n; i++){
+    //     if(arr[i] > largest){
+    //         largest = arr[i];
+    //     }
+    //     else
+    //     smallest = arr[i];
+    // }
+    // cout<<"The largest element is: "<<largest<<endl;
+    // cout<<"The smallest element is: "<<smallest<<endl;
+    // return 0;
+
+    int arr[] = {2 ,4, 8, 12, 16};
+    cout<<"The array elements are: ";
     int n = sizeof(arr)/sizeof(arr[0]);
-    cout<<"The array elements are: "<<endl;
-    for(int i=0;i<n;i++){
+    for(int i = 0; i < n; i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    int largest = arr[0];
-    int smallest = arr[0];
-    for(int i = 1; i < n; i++){
-        if(arr[i] > largest){
-            largest = arr[i];
-        }
-        else
-        smallest = arr[i];
+    cout<<"The reversed array elements are: ";
+    for(int i=n; i>0; i--){
+        cout<<arr[i-1]<<" ";
     }
-    cout<<"The largest element is: "<<largest<<endl;
-    cout<<"The smallest element is: "<<smallest<<endl;
+    cout<<endl;
     return 0;
 }
