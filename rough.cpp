@@ -170,12 +170,25 @@ int main(){
     // }
     // return 0;
 
-    cout<<"Enter the  value of n: ";
+    // Print a right-angled triangle pattern
+    // cout<<"Enter the  value of n: ";
+    // int n;
+    // cin>>n;
+    // for(int i=0; i<n; i++){
+    //     for(int j=0; j<=i; j++){
+    //         cout<<"* ";
+    //     }
+    //     cout<<endl;
+    // }
+    // return 0;
+
+    cout<<"Enter the value of n: ";
     int n;
     cin>>n;
-    for(int i=0; i<n; i++){
-        for(int j=0; j<=i; j++){
-            cout<<"* ";
+    int num=1;
+    for(int i=1; i<=n; i++){
+        for(int j=1; j<=i; j++){
+            cout<<num++<<" ";
         }
         cout<<endl;
     }
