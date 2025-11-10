@@ -139,22 +139,34 @@ int main(){
     // return 0;
 
     // Find the largest and smallest elements in an array
-    int arr[] = {34, -2, 45, 0, 11, -9};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    int largest = arr[0];
-    int smallest = arr[0];
-    for(int i = 1; i < n; i++){
-        if(arr[i] > largest){
-            largest = arr[i];   
+    // int arr[] = {34, -2, 45, 0, 11, -9};
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // int largest = arr[0];
+    // int smallest = arr[0];
+    // for(int i = 1; i < n; i++){
+    //     if(arr[i] > largest){
+    //         largest = arr[i];   
+    //     }
+    //     if(arr[i] < smallest){
+    //         smallest = arr[i];   
+    //     }
+    //     else{
+    //         continue;   
+    //     }
+    // }
+    // cout<<"Largest element: "<<largest<<endl;
+    // cout<<"Smallest element: "<<smallest<<endl;
+    // return 0;
+
+    // Print a pattern of numbers
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cout<<i<<" ";
         }
-        if(arr[i] < smallest){
-            smallest = arr[i];   
-        }
-        else{
-            continue;   
-        }
+        cout<<endl;
     }
-    cout<<"Largest element: "<<largest<<endl;
-    cout<<"Smallest element: "<<smallest<<endl;
     return 0;
 }
