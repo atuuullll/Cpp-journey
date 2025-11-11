@@ -214,14 +214,29 @@ int main(){
     // return 0;
 
     // Print a right-aligned triangle pattern
-    cout<<"Enther the calue of n: ";
+    // cout<<"Enther the calue of n: ";
+    // int n;
+    // cin>>n;
+    // for(int i=1; i<=n; i++){
+    //     for(int j=1;j<=n-i; j++){
+    //         cout<<" ";
+    //     }
+    //     for(int k=1; k<=i; k++){
+    //         cout<<"*";
+    //     }
+    //     cout<<endl;
+    // }
+    // return 0;
+
+    //Print a upper pyramid of diamond pattern
+    cout<<"Enter the value of n: ";
     int n;
     cin>>n;
     for(int i=1; i<=n; i++){
-        for(int j=1;j<=n-i; j++){
+        for(int j=i; j<n; j++){
             cout<<" ";
         }
-        for(int k=1; k<=i; k++){
+        for(int k=1; k<=(2*i-1); k++){
             cout<<"*";
         }
         cout<<endl;
