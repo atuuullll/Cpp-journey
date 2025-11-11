@@ -195,20 +195,36 @@ int main(){
     // }
     // return 0;
 
-    cout<<"Enter the value of n: ";
+    // Print a hollow square pattern
+    // cout<<"Enter the value of n: ";
+    // int n;
+    // cin>>n;
+    // for(int i=1; i<=n; i++){
+    //     cout<<" * ";
+    //     for(int j=1; j<=n-1;j++){
+    //         if(i==1 || i==n){
+    //             cout<<" * ";
+    //         }
+    //         else {
+    //             cout<<"   ";
+    //         }
+    //     }
+    //     cout<<" * "<<endl;
+    // }
+    // return 0;
+
+    // Print a right-aligned triangle pattern
+    cout<<"Enther the calue of n: ";
     int n;
     cin>>n;
     for(int i=1; i<=n; i++){
-        cout<<" * ";
-        for(int j=1; j<=n-1;j++){
-            if(i==1 || i==n){
-                cout<<" * ";
-            }
-            else {
-                cout<<"   ";
-            }
+        for(int j=1;j<=n-i; j++){
+            cout<<" ";
         }
-        cout<<" * "<<endl;
+        for(int k=1; k<=i; k++){
+            cout<<"*";
+        }
+        cout<<endl;
     }
     return 0;
 }
