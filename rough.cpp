@@ -283,19 +283,32 @@ int main(){
     // return 0;
 
     // Print Pascal's triangle pattern
-    cout<<"Enter the value of n: ";
-    int n;
+    // cout<<"Enter the value of n: ";
+    // int n;
+    // cin>>n;
+    // for(int i=0; i<n; i++){
+    //     int coeff = 1;
+    //     for(int j=0; j<n-i-1; j++){
+    //         cout<<" ";
+    //     }
+    //     for(int k=0; k<=i; k++){
+    //         cout<<coeff<<" ";
+    //         coeff = coeff * (i - k) / (k + 1);
+    //     }
+    //     cout<<endl;
+    // }
+    // return 0;
+
+    //binary to decimal conversion
+    int n, decimal = 0, base = 1, last_digit;
+    cout<<"Enter a binary number: ";
     cin>>n;
-    for(int i=0; i<n; i++){
-        int coeff = 1;
-        for(int j=0; j<n-i-1; j++){
-            cout<<" ";
-        }
-        for(int k=0; k<=i; k++){
-            cout<<coeff<<" ";
-            coeff = coeff * (i - k) / (k + 1);
-        }
-        cout<<endl;
+    while(n > 0){
+        last_digit = n % 10;
+        decimal = decimal + last_digit * base;
+        n = n / 10;
+        base = base * 2;                
     }
+    cout<<"The decimal equivalent is: "<<decimal<<endl;
     return 0;
 }
