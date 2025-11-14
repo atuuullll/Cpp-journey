@@ -79,6 +79,21 @@ int main(){
     // cout<<"The smallest element is: "<<smallest<<endl;
     // return 0;
 
+    // int arr[] = {2 ,4, 8, 12, 16};
+    // cout<<"The array elements are: ";
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // for(int i = 0; i < n; i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;
+    // cout<<"The reversed array elements are: ";
+    // for(int i=n; i>0; i--){
+    //     cout<<arr[i-1]<<" ";
+    // }
+    // cout<<endl;
+    // return 0;
+
+    //reverse an array without using extra space
     int arr[] = {2 ,4, 8, 12, 16};
     cout<<"The array elements are: ";
     int n = sizeof(arr)/sizeof(arr[0]);
@@ -86,9 +101,14 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+    for(int i=0; i<n/2; i++){
+        int temp = arr[i];
+        arr[i] = arr[n-i-1];
+        arr[n-i-1] = temp;
+    }
     cout<<"The reversed array elements are: ";
-    for(int i=n; i>0; i--){
-        cout<<arr[i-1]<<" ";
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
     }
     cout<<endl;
     return 0;
