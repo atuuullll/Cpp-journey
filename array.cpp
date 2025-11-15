@@ -133,22 +133,45 @@ int main(){
     // return 0;
 
     //copy one array to another
-    int arr[] = {2 ,4, 8, 12, 16};
-    cout<<"The array elements are: ";
+    // int arr[] = {2 ,4, 8, 12, 16};
+    // cout<<"The array elements are: ";
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // for(int i = 0; i < n; i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;
+    // int copy[n];
+    // for(int i=0; i<n; i++){
+    //     copy[i] = arr[i];
+    // }
+    // cout<<"The copied array elements are: ";
+    // for(int i=0; i<n; i++){
+    //     cout<<copy[i]<<" ";
+    // }
+    // cout<<endl;
+    // return 0;
+
+    //sort an array in ascending order
+    int arr[] = {34, -2, 45, 0, 11, -9};
     int n = sizeof(arr)/sizeof(arr[0]);
+    cout<<"The array elements are: ";
     for(int i = 0; i < n; i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    int copy[n];
-    for(int i=0; i<n; i++){
-        copy[i] = arr[i];
+    for(int i=0; i<n-1; i++){
+        for(int j=i+1; j<n; j++){
+            if(arr[i] > arr[j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
     }
-    cout<<"The copied array elements are: ";
+    cout<<"The sorted array elements in ascending order are: ";
     for(int i=0; i<n; i++){
-        cout<<copy[i]<<" ";
+        cout<<arr[i]<<" ";  
     }
     cout<<endl;
     return 0;
-
 }
