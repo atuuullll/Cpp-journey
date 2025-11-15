@@ -114,21 +114,41 @@ int main(){
     // return 0;
 
     //reverse an array with using extra space
+    // int arr[] = {2 ,4, 8, 12, 16};
+    // cout<<"The array elements are: ";
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // for(int i = 0; i < n; i++){
+    //     cout<<arr[i]<<" ";
+    // }   
+    // cout<<endl;
+    // int rev[n];
+    // for(int i=0; i<n; i++){
+    //     rev[i] = arr[n-i-1];  
+    // }
+    // cout<<"The reversed array elements are: ";
+    // for(int i=0; i<n; i++){
+    //     cout<<rev[i]<<" ";
+    // }
+    // cout<<endl;
+    // return 0;
+
+    //copy one array to another
     int arr[] = {2 ,4, 8, 12, 16};
     cout<<"The array elements are: ";
     int n = sizeof(arr)/sizeof(arr[0]);
     for(int i = 0; i < n; i++){
         cout<<arr[i]<<" ";
-    }   
-    cout<<endl;
-    int rev[n];
-    for(int i=0; i<n; i++){
-        rev[i] = arr[n-i-1];  
     }
-    cout<<"The reversed array elements are: ";
+    cout<<endl;
+    int copy[n];
     for(int i=0; i<n; i++){
-        cout<<rev[i]<<" ";
+        copy[i] = arr[i];
+    }
+    cout<<"The copied array elements are: ";
+    for(int i=0; i<n; i++){
+        cout<<copy[i]<<" ";
     }
     cout<<endl;
     return 0;
+
 }
