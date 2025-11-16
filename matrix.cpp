@@ -60,8 +60,45 @@
 // }
 
 //Transpose of a matrix
+// #include<iostream>
+// using namespace std;
+// int main() {
+//     int matrix[3][3] = {{1, 2, 3},
+//                       {4, 5, 6},
+//                       {7, 8, 9}};
+//     cout<<"The original matrix is: "<<endl;
+//     for(int i=0; i<3; i++){
+//         for(int j=0; j<3; j++){
+//             cout<<matrix[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     int transpose[3][3];
+//     for(int i=0; i<3; i++){
+//         for(int j=0; j<3; j++){
+//             transpose[j][i] = matrix[i][j];
+//         }
+//     }
+//     cout<<"The transposed matrix is: "<<endl;
+//     for(int i=0; i<3; i++){
+//         for(int j=0; j<3; j++){
+//             cout<<transpose[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;   
+// }
+
+//Transpose of a matrix using functions
 #include<iostream>
 using namespace std;
+void transposeMatrix(int matrix[3][3], int transposed[3][3]) {
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            transposed[j][i] = matrix[i][j];
+        }
+    }
+}   
 int main() {
     int matrix[3][3] = {{1, 2, 3},
                       {4, 5, 6},
@@ -73,18 +110,14 @@ int main() {
         }
         cout<<endl;
     }
-    int transpose[3][3];
-    for(int i=0; i<3; i++){
-        for(int j=0; j<3; j++){
-            transpose[j][i] = matrix[i][j];
-        }
-    }
+    int transposed[3][3];
+    transposeMatrix(matrix, transposed);
     cout<<"The transposed matrix is: "<<endl;
     for(int i=0; i<3; i++){
         for(int j=0; j<3; j++){
-            cout<<transpose[i][j]<<" ";
+            cout<<transposed[i][j]<<" ";
         }
         cout<<endl;
     }
-    return 0;   
+    return 0;
 }
