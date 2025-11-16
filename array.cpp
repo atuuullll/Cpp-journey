@@ -200,28 +200,71 @@ int main(){
     //return 0;
 
     //search an element in an array
-    int arr[] = {34, -2, 45, 0, 11, -9};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    cout<<"The array elements are: ";
-    for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
+    // int arr[] = {34, -2, 45, 0, 11, -9};
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // cout<<"The array elements are: ";
+    // for(int i=0; i<n; i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;
+    // int key;
+    // cout<<"Enter the element to be searched: ";
+    // cin>>key;
+    // bool found = false;
+    // for(int i=0; i<n; i++){
+    //     if(arr[i] == key){
+    //         found = true;
+    //         break;
+    //     }
+    // }
+    // if(found){
+    //     cout<<"Element found in the array."<<endl;
+    // }
+    // else{
+    //     cout<<"Element not found in the array."<<endl;
+    // }
+    // return 0;
+
+    //merge two arrays
+    int arr1[] = {2,4,6};
+    int arr2[] = {1,3,5,7,9};
+    int n1 = sizeof(arr1)/sizeof(arr1[0]);
+    cout<<"The first array elements are: ";
+    for(int i=0; i<n1; i++){
+        cout<<arr1[i]<<" ";
     }
     cout<<endl;
-    int key;
-    cout<<"Enter the element to be searched: ";
-    cin>>key;
-    bool found = false;
-    for(int i=0; i<n; i++){
-        if(arr[i] == key){
-            found = true;
-            break;
+    int n2 = sizeof(arr2)/sizeof(arr2[0]);
+    cout<<"The second array elements are: ";
+    for(int i=0; i<n2; i++){
+        cout<<arr2[i]<<" ";
+    }
+    cout<<endl;
+    int merged[n1+n2];
+    for(int i=0; i<n1; i++){
+        merged[i] = arr1[i];
+    }
+    for(int i=0; i<n2; i++){
+        merged[n1+i] = arr2[i];
+    }
+    cout<<"The merged array elements are: ";
+    for(int i=0; i<n1+n2; i++){
+        cout<<merged[i]<<" ";
+    }
+    cout<<endl;
+    for(int i=0; i<n1+n2; i++){
+        for(int j=i+1; j<n1+n2; j++){
+            if(merged[i] > merged[j]){
+                int temp = merged[i];
+                merged[i] = merged[j];
+                merged[j] = temp;
+            }
         }
     }
-    if(found){
-        cout<<"Element found in the array."<<endl;
+    cout<<"The merged sorted array elements are: ";
+    for(int i=0; i<n1+n2; i++){
+        cout<<merged[i]<<" ";
     }
-    else{
-        cout<<"Element not found in the array."<<endl;
-    }
+    cout<<endl;
     return 0;
 }
