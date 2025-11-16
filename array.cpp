@@ -226,45 +226,71 @@ int main(){
     // return 0;
 
     //merge two arrays
-    int arr1[] = {2,4,6};
-    int arr2[] = {1,3,5,7,9};
-    int n1 = sizeof(arr1)/sizeof(arr1[0]);
-    cout<<"The first array elements are: ";
-    for(int i=0; i<n1; i++){
-        cout<<arr1[i]<<" ";
+    // int arr1[] = {2,4,6};
+    // int arr2[] = {1,3,5,7,9};
+    // int n1 = sizeof(arr1)/sizeof(arr1[0]);
+    // cout<<"The first array elements are: ";
+    // for(int i=0; i<n1; i++){
+    //     cout<<arr1[i]<<" ";
+    // }
+    // cout<<endl;
+    // int n2 = sizeof(arr2)/sizeof(arr2[0]);
+    // cout<<"The second array elements are: ";
+    // for(int i=0; i<n2; i++){
+    //     cout<<arr2[i]<<" ";
+    // }
+    // cout<<endl;
+    // int merged[n1+n2];
+    // for(int i=0; i<n1; i++){
+    //     merged[i] = arr1[i];
+    // }
+    // for(int i=0; i<n2; i++){
+    //     merged[n1+i] = arr2[i];
+    // }
+    // cout<<"The merged array elements are: ";
+    // for(int i=0; i<n1+n2; i++){
+    //     cout<<merged[i]<<" ";
+    // }
+    // cout<<endl;
+    // for(int i=0; i<n1+n2; i++){
+    //     for(int j=i+1; j<n1+n2; j++){
+    //         if(merged[i] > merged[j]){
+    //             int temp = merged[i];
+    //             merged[i] = merged[j];
+    //             merged[j] = temp;
+    //         }
+    //     }
+    // }
+    // cout<<"The merged sorted array elements are: ";
+    // for(int i=0; i<n1+n2; i++){
+    //     cout<<merged[i]<<" ";
+    // }
+    // cout<<endl;
+    // return 0;
+
+    //transpose of a matrix
+    int matrix[3][3] = {{1, 2, 3},
+                      {4, 5, 6},
+                      {7, 8, 9}};
+    cout<<"The original matrix is: "<<endl;
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<endl;
     }
-    cout<<endl;
-    int n2 = sizeof(arr2)/sizeof(arr2[0]);
-    cout<<"The second array elements are: ";
-    for(int i=0; i<n2; i++){
-        cout<<arr2[i]<<" ";
-    }
-    cout<<endl;
-    int merged[n1+n2];
-    for(int i=0; i<n1; i++){
-        merged[i] = arr1[i];
-    }
-    for(int i=0; i<n2; i++){
-        merged[n1+i] = arr2[i];
-    }
-    cout<<"The merged array elements are: ";
-    for(int i=0; i<n1+n2; i++){
-        cout<<merged[i]<<" ";
-    }
-    cout<<endl;
-    for(int i=0; i<n1+n2; i++){
-        for(int j=i+1; j<n1+n2; j++){
-            if(merged[i] > merged[j]){
-                int temp = merged[i];
-                merged[i] = merged[j];
-                merged[j] = temp;
-            }
+    int transpose[3][3];
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            transpose[j][i] = matrix[i][j];
         }
     }
-    cout<<"The merged sorted array elements are: ";
-    for(int i=0; i<n1+n2; i++){
-        cout<<merged[i]<<" ";
+    cout<<"The transposed matrix is: "<<endl;
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            cout<<transpose[i][j]<<" ";
+        }
+        cout<<endl;
     }
-    cout<<endl;
     return 0;
 }
