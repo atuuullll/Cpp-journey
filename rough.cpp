@@ -338,19 +338,41 @@ int main(){
     }
     cout<<endl;
     // Rotate the array
-    int temp[k];
-    for(int i = 0; i < k; i++){
-        temp[i] = arr[i];
-    }
-    for(int i = k; i < n; i++){
-        arr[i - k] = arr[i];
-    }
-    for(int i = 0; i < k; i++){
-        arr[n - k + i] = temp[i];
-    }
+    // int temp[k];
+    // for(int i = 0; i < k; i++){
+    //     temp[i] = arr[i];
+    // }
+    // for(int i = k; i < n; i++){
+    //     arr[i - k] = arr[i];
+    // }
+    // for(int i = 0; i < k; i++){
+    //     arr[n - k + i] = temp[i];
+    // }
+    // cout<<"Rotated array: ";
+    // for(int i = 0; i < n; i++){
+    //     cout<<arr[i]<<" ";  
+    // }
+    // cout<<endl;
+    // return 0;
+
+    // Rotate the array using reversal algorithm
+    // Reverse function
+    auto reverse = [](int arr[], int start, int end) {
+        while(start < end){
+            swap(arr[start], arr[end]);
+            start++;
+            end--;
+        }
+    };
+    // Step 1: Reverse the first k elements
+    reverse(arr, 0, k - 1);
+    // Step 2: Reverse the remaining n-k elements
+    reverse(arr, k, n - 1);
+    // Step 3: Reverse the whole array
+    reverse(arr, 0, n - 1);
     cout<<"Rotated array: ";
     for(int i = 0; i < n; i++){
-        cout<<arr[i]<<" ";  
+        cout<<arr[i]<<" ";
     }
     cout<<endl;
     return 0;
