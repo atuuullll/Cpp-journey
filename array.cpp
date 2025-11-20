@@ -269,6 +269,33 @@ int main(){
     // return 0;
 
     // array element deletion
+    // int arr[] = {2,4,6,8,10};
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // cout<<"The array elements are: ";
+    // for(int i=0; i<n; i++){
+    //     cout<<arr[i]<<" ";
+    // }
+    // cout<<endl;
+    // int pos;
+    // cout<<"Enter the position of element to be deleted (0 to "<<n-1<<"): ";
+    // cin>>pos;
+    // if(pos < 0 || pos >= n){
+    //     cout<<"Invalid position!"<<endl;
+    // }
+    // else{
+    //     for(int i=pos; i<n-1; i++){
+    //         arr[i] = arr[i+1];
+    //     }
+    //     n--; // Reduce the size of array after deletion
+    //     cout<<"Array after deletion: ";
+    //     for(int i=0; i<n; i++){
+    //         cout<<arr[i]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+    // return 0;
+
+    //array insertion
     int arr[] = {2,4,6,8,10};
     int n = sizeof(arr)/sizeof(arr[0]);
     cout<<"The array elements are: ";
@@ -276,18 +303,22 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    int pos;
-    cout<<"Enter the position of element to be deleted (0 to "<<n-1<<"): ";
-    cin>>pos;
-    if(pos < 0 || pos >= n){
+    int pos, element;
+    cout<<"Enter the position to insert element (0 to "<<n<<"): ";
+    cin>>pos;   
+    cout<<"Enter the element to be inserted: ";
+    cin>>element;
+    if(pos < 0 || pos > n){
         cout<<"Invalid position!"<<endl;
     }
     else{
-        for(int i=pos; i<n-1; i++){
-            arr[i] = arr[i+1];
+        // Shift elements to the right to create space
+        for(int i=n; i>pos; i--){
+            arr[i] = arr[i-1];
         }
-        n--; // Reduce the size of array after deletion
-        cout<<"Array after deletion: ";
+        arr[pos] = element; // Insert the new element
+        n++; // Increase the size of array after insertion
+        cout<<"Array after insertion: ";
         for(int i=0; i<n; i++){
             cout<<arr[i]<<" ";
         }
