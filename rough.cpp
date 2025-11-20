@@ -378,10 +378,42 @@ int main(){
     // return 0;
 
     // temperature conversion
-    float celsius, fahrenheit;
-    cout<<"Enter temperature in Celsius: ";
-    cin>>celsius;
-    fahrenheit = (celsius * 9/5) + 32;
-    cout<<"Temperature in Fahrenheit: "<<fahrenheit<<endl;
+    // float celsius, fahrenheit;
+    // cout<<"Enter temperature in Celsius: ";
+    // cin>>celsius;
+    // fahrenheit = (celsius * 9/5) + 32;
+    // cout<<"Temperature in Fahrenheit: "<<fahrenheit<<endl;
+    // return 0;
+
+    // simple calculator
+    char op;
+    float num1, num2, result;
+    cout<<"Enter operator (+, -, *, /): ";
+    cin>>op;
+    cout<<"Enter two operands: ";
+    cin>>num1>>num2;
+    switch(op){
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;   
+            break;
+        case '/':
+            if(num2 != 0){
+                result = num1 / num2;
+            } else {
+                cout<<"Error: Division by zero!"<<endl;
+                return 1;
+            }
+            break;
+        default:
+            cout<<"Error: Invalid operator!"<<endl;
+            return 1;
+    }
+    cout<<"Result: "<<result<<endl;
     return 0;
 }
