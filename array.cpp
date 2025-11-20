@@ -268,27 +268,28 @@ int main(){
     // cout<<endl;
     // return 0;
 
-    //transpose of a matrix
-    int matrix[3][3] = {{1, 2, 3},
-                      {4, 5, 6},
-                      {7, 8, 9}};
-    cout<<"The original matrix is: "<<endl;
-    for(int i=0; i<3; i++){
-        for(int j=0; j<3; j++){
-            cout<<matrix[i][j]<<" ";
-        }
-        cout<<endl;
+    // array element deletion
+    int arr[] = {2,4,6,8,10};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout<<"The array elements are: ";
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
     }
-    int transpose[3][3];
-    for(int i=0; i<3; i++){
-        for(int j=0; j<3; j++){
-            transpose[j][i] = matrix[i][j];
-        }
+    cout<<endl;
+    int pos;
+    cout<<"Enter the position of element to be deleted (0 to "<<n-1<<"): ";
+    cin>>pos;
+    if(pos < 0 || pos >= n){
+        cout<<"Invalid position!"<<endl;
     }
-    cout<<"The transposed matrix is: "<<endl;
-    for(int i=0; i<3; i++){
-        for(int j=0; j<3; j++){
-            cout<<transpose[i][j]<<" ";
+    else{
+        for(int i=pos; i<n-1; i++){
+            arr[i] = arr[i+1];
+        }
+        n--; // Reduce the size of array after deletion
+        cout<<"Array after deletion: ";
+        for(int i=0; i<n; i++){
+            cout<<arr[i]<<" ";
         }
         cout<<endl;
     }
