@@ -386,34 +386,52 @@ int main(){
     // return 0;
 
     // simple calculator
-    char op;
-    float num1, num2, result;
-    cout<<"Enter operator (+, -, *, /): ";
-    cin>>op;
-    cout<<"Enter two operands: ";
+    // char op;
+    // float num1, num2, result;
+    // cout<<"Enter operator (+, -, *, /): ";
+    // cin>>op;
+    // cout<<"Enter two operands: ";
+    // cin>>num1>>num2;
+    // switch(op){
+    //     case '+':
+    //         result = num1 + num2;
+    //         break;
+    //     case '-':
+    //         result = num1 - num2;
+    //         break;
+    //     case '*':
+    //         result = num1 * num2;   
+    //         break;
+    //     case '/':
+    //         if(num2 != 0){
+    //             result = num1 / num2;
+    //         } else {
+    //             cout<<"Error: Division by zero!"<<endl;
+    //             return 1;
+    //         }
+    //         break;
+    //     default:
+    //         cout<<"Error: Invalid operator!"<<endl;
+    //         return 1;
+    // }
+    // cout<<"Result: "<<result<<endl;
+    // return 0;
+
+    // HCF and LCM calculation
+    int num1, num2, hcf, lcm;
+    cout<<"Enter two numbers: ";
     cin>>num1>>num2;
-    switch(op){
-        case '+':
-            result = num1 + num2;
-            break;
-        case '-':
-            result = num1 - num2;
-            break;
-        case '*':
-            result = num1 * num2;   
-            break;
-        case '/':
-            if(num2 != 0){
-                result = num1 / num2;
-            } else {
-                cout<<"Error: Division by zero!"<<endl;
-                return 1;
-            }
-            break;
-        default:
-            cout<<"Error: Invalid operator!"<<endl;
-            return 1;
+    // Calculate HCF
+    int a = num1, b = num2;
+    while(b != 0){
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-    cout<<"Result: "<<result<<endl;
+    hcf = a;
+    // Calculate LCM
+    lcm = (num1 * num2) / hcf;
+    cout<<"HCF of "<<num1<<" and "<<num2<<" is: "<<hcf<<endl;
+    cout<<"LCM of "<<num1<<" and "<<num2<<" is: "<<lcm<<endl;
     return 0;
 }
