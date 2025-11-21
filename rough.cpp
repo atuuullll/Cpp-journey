@@ -436,13 +436,29 @@ int main(){
     // return 0;
 
     // Swap two numbers without using a temporary variable
-    int a, b;
-    cout<<"Enter two numbers: ";
-    cin>>a>>b;
-    cout<<"Before swapping: a = "<<a<<", b = "<<b<<endl;
-    a = a + b;
-    b = a - b;
-    a = a - b;
-    cout<<"After swapping: a = "<<a<<", b = "<<b<<endl;
-    return 0;
+    // int a, b;
+    // cout<<"Enter two numbers: ";
+    // cin>>a>>b;
+    // cout<<"Before swapping: a = "<<a<<", b = "<<b<<endl;
+    // a = a + b;
+    // b = a - b;
+    // a = a - b;
+    // cout<<"After swapping: a = "<<a<<", b = "<<b<<endl;
+    // return 0;
+
+    // Check if a number is prime
+    int n;
+    cout<<"Enter a number: ";
+    cin>>n;
+    for(int i=2;i<=n;i++){
+        if(n%i==0){
+            if(i==n){
+                cout<<"The number is prime"<<endl;
+            }
+            else{
+                cout<<"The number is not prime"<<endl;
+                break;
+            }
+        }
+    }
 }
