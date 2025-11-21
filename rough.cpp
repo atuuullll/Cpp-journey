@@ -418,20 +418,31 @@ int main(){
     // return 0;
 
     // HCF and LCM calculation
-    int num1, num2, hcf, lcm;
+    // int num1, num2, hcf, lcm;
+    // cout<<"Enter two numbers: ";
+    // cin>>num1>>num2;
+    // // Calculate HCF
+    // int a = num1, b = num2;
+    // while(b != 0){
+    //     int temp = b;
+    //     b = a % b;
+    //     a = temp;
+    // }
+    // hcf = a;
+    // // Calculate LCM
+    // lcm = (num1 * num2) / hcf;
+    // cout<<"HCF of "<<num1<<" and "<<num2<<" is: "<<hcf<<endl;
+    // cout<<"LCM of "<<num1<<" and "<<num2<<" is: "<<lcm<<endl;
+    // return 0;
+
+    // Swap two numbers without using a temporary variable
+    int a, b;
     cout<<"Enter two numbers: ";
-    cin>>num1>>num2;
-    // Calculate HCF
-    int a = num1, b = num2;
-    while(b != 0){
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    hcf = a;
-    // Calculate LCM
-    lcm = (num1 * num2) / hcf;
-    cout<<"HCF of "<<num1<<" and "<<num2<<" is: "<<hcf<<endl;
-    cout<<"LCM of "<<num1<<" and "<<num2<<" is: "<<lcm<<endl;
+    cin>>a>>b;
+    cout<<"Before swapping: a = "<<a<<", b = "<<b<<endl;
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    cout<<"After swapping: a = "<<a<<", b = "<<b<<endl;
     return 0;
 }
