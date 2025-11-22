@@ -464,21 +464,35 @@ int main(){
 
 
     //print even and odd numbers in an array
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    cout<<"Even numbers: ";
-    for(int i=0;i<n;i++){
-        if(arr[i]%2==0){
-            cout<<arr[i]<<" ";
-        }
+    // int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // cout<<"Even numbers: ";
+    // for(int i=0;i<n;i++){
+    //     if(arr[i]%2==0){
+    //         cout<<arr[i]<<" ";
+    //     }
+    // }
+    // cout<<endl;
+    // cout<<"Odd numbers: ";
+    // for(int i=0;i<n;i++){
+    //     if(arr[i]%2!=0){
+    //         cout<<arr[i]<<" ";
+    //     }
+    // }
+    // cout<<endl;
+    // return 0;
+
+
+    // find GCD of two numbers
+    int a, b, gcd;
+    cout<<"Enter two numbers: ";
+    cin>>a>>b;
+    while(b != 0){
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-    cout<<endl;
-    cout<<"Odd numbers: ";
-    for(int i=0;i<n;i++){
-        if(arr[i]%2!=0){
-            cout<<arr[i]<<" ";
-        }
-    }
-    cout<<endl;
+    gcd = a;
+    cout<<"GCD is: "<<gcd<<endl;
     return 0;
 }
