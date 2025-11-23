@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<iostream>
-using namespace std;
-int main(){
+// #include<stdio.h>
+// #include<iostream>
+// using namespace std;
+// int main(){
     // int arr[] = {2, 4, 8, 12, 16};
     // cout<<"The array elements are: "<<endl;
     // int i;
@@ -498,19 +498,68 @@ int main(){
 
     
     // find LCM of two numbers
-    int a, b, lcm;
-    cout<<"Enter two numbers: ";
-    cin>>a>>b;  
-    int gcd;
-    int x = a, y = b;
-    while(y != 0){  
-        int temp = y;
-        y = x % y;
-        x = temp;
-    }
-    gcd = x;
-    lcm = (a * b) / gcd;
-    cout<<"LCM is: "<<lcm<<endl;
-    return 0;
+    // int a, b, lcm;
+    // cout<<"Enter two numbers: ";
+    // cin>>a>>b;  
+    // int gcd;
+    // int x = a, y = b;
+    // while(y != 0){  
+    //     int temp = y;
+    //     y = x % y;
+    //     x = temp;
+    // }
+    // gcd = x;
+    // lcm = (a * b) / gcd;
+    // cout<<"LCM is: "<<lcm<<endl;
+    // return 0;
 
+//}
+
+// linked list implementation    
+#include <iostream>
+using namespace std;
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
+};
+class LinkedList {
+private:
+    Node* head;
+public:
+    LinkedList() {
+        head = nullptr;
+    }
+    void insert(int val) {
+        Node* newNode = new Node(val);
+        if (!head) {
+            head = newNode;
+            return;
+        }
+        Node* temp = head;
+        while (temp->next) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+    void display() {
+        Node* temp = head;
+        while (temp) {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        }
+        cout << "nullptr" << endl;
+    }
+};
+int main() {
+    LinkedList list;
+    list.insert(10);
+    list.insert(20);
+    list.insert(30);
+    list.display();
+    return 0;
 }
