@@ -484,15 +484,33 @@ int main(){
 
 
     // find GCD of two numbers
-    int a, b, gcd;
+    // int a, b, gcd;
+    // cout<<"Enter two numbers: ";
+    // cin>>a>>b;
+    // while(b != 0){
+    //     int temp = b;
+    //     b = a % b;
+    //     a = temp;
+    // }
+    // gcd = a;
+    // cout<<"GCD is: "<<gcd<<endl;
+    // return 0;
+
+    
+    // find LCM of two numbers
+    int a, b, lcm;
     cout<<"Enter two numbers: ";
-    cin>>a>>b;
-    while(b != 0){
-        int temp = b;
-        b = a % b;
-        a = temp;
+    cin>>a>>b;  
+    int gcd;
+    int x = a, y = b;
+    while(y != 0){  
+        int temp = y;
+        y = x % y;
+        x = temp;
     }
-    gcd = a;
-    cout<<"GCD is: "<<gcd<<endl;
+    gcd = x;
+    lcm = (a * b) / gcd;
+    cout<<"LCM is: "<<lcm<<endl;
     return 0;
+
 }
