@@ -565,28 +565,48 @@
 // }
 
 //function to check if a number is Armstrong number
+// #include <iostream>
+// #include <cmath>
+// using namespace std;    
+// bool isArmstrong(int num) {
+//     int originalNum = num;
+//     int sum = 0;
+//     int digits = log10(num) + 1;
+//     while (num > 0) {
+//         int digit = num % 10;
+//         sum += pow(digit, digits);
+//         num /= 10;
+//     }
+//     return sum == originalNum;
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     if (isArmstrong(number)) {
+//         cout << number << " is an Armstrong number." << endl;
+//     } else {
+//         cout << number << " is not an Armstrong number." << endl;
+//     }
+//     return 0;
+// }
+
+//function to find the sum of digits of a number
 #include <iostream>
-#include <cmath>
-using namespace std;    
-bool isArmstrong(int num) {
-    int originalNum = num;
+using namespace std;
+int sumOfDigits(int num) {
     int sum = 0;
-    int digits = log10(num) + 1;
     while (num > 0) {
-        int digit = num % 10;
-        sum += pow(digit, digits);
-        num /= 10;
+        sum += num % 10;
+        num /= 10;  
     }
-    return sum == originalNum;
+    return sum;
 }
 int main() {
     int number;
     cout << "Enter a number: "; 
     cin >> number;
-    if (isArmstrong(number)) {
-        cout << number << " is an Armstrong number." << endl;
-    } else {
-        cout << number << " is not an Armstrong number." << endl;
-    }
+    int result = sumOfDigits(number);
+    cout << "The sum of digits of " << number << " is " << result << "." << endl;
     return 0;
 }
