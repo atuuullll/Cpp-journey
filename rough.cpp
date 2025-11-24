@@ -516,50 +516,77 @@
 //}
 
 // linked list implementation    
+// #include <iostream>
+// using namespace std;
+// class Node {
+// public:
+//     int data;
+//     Node* next;
+//     Node(int val) {
+//         data = val;
+//         next = nullptr;
+//     }
+// };
+// class LinkedList {
+// private:
+//     Node* head;
+// public:
+//     LinkedList() {
+//         head = nullptr;
+//     }
+//     void insert(int val) {
+//         Node* newNode = new Node(val);
+//         if (!head) {
+//             head = newNode;
+//             return;
+//         }
+//         Node* temp = head;
+//         while (temp->next) {
+//             temp = temp->next;
+//         }
+//         temp->next = newNode;
+//     }
+//     void display() {
+//         Node* temp = head;
+//         while (temp) {
+//             cout << temp->data << " -> ";
+//             temp = temp->next;
+//         }
+//         cout << "nullptr" << endl;
+//     }
+// };
+// int main() {
+//     LinkedList list;
+//     list.insert(10);
+//     list.insert(20);
+//     list.insert(30);
+//     list.display();
+//     return 0;
+// }
+
+//function to check if a number is Armstrong number
 #include <iostream>
-using namespace std;
-class Node {
-public:
-    int data;
-    Node* next;
-    Node(int val) {
-        data = val;
-        next = nullptr;
+#include <cmath>
+using namespace std;    
+bool isArmstrong(int num) {
+    int originalNum = num;
+    int sum = 0;
+    int digits = log10(num) + 1;
+    while (num > 0) {
+        int digit = num % 10;
+        sum += pow(digit, digits);
+        num /= 10;
     }
-};
-class LinkedList {
-private:
-    Node* head;
-public:
-    LinkedList() {
-        head = nullptr;
-    }
-    void insert(int val) {
-        Node* newNode = new Node(val);
-        if (!head) {
-            head = newNode;
-            return;
-        }
-        Node* temp = head;
-        while (temp->next) {
-            temp = temp->next;
-        }
-        temp->next = newNode;
-    }
-    void display() {
-        Node* temp = head;
-        while (temp) {
-            cout << temp->data << " -> ";
-            temp = temp->next;
-        }
-        cout << "nullptr" << endl;
-    }
-};
+    return sum == originalNum;
+}
 int main() {
-    LinkedList list;
-    list.insert(10);
-    list.insert(20);
-    list.insert(30);
-    list.display();
+    int number;
+    cout << "Enter a number: "; 
+    cin >> number;
+    if (isArmstrong(number)) {
+        cout << number << " is an Armstrong number." << endl;
+    } else {
+        cout << number << " is not an Armstrong number." << endl;
+    }
     return 0;
 }
