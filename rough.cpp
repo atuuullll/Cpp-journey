@@ -592,21 +592,46 @@
 // }
 
 //function to find the sum of digits of a number
+// #include <iostream>
+// using namespace std;
+// int sumOfDigits(int num) {
+//     int sum = 0;
+//     while (num > 0) {
+//         sum += num % 10;
+//         num /= 10;  
+//     }
+//     return sum;
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     int result = sumOfDigits(number);
+//     cout << "The sum of digits of " << number << " is " << result << "." << endl;
+//     return 0;
+// }
+
+
+//function to check if a number is perfect number
 #include <iostream>
 using namespace std;
-int sumOfDigits(int num) {
+bool isPerfect(int num) {
     int sum = 0;
-    while (num > 0) {
-        sum += num % 10;
-        num /= 10;  
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
     }
-    return sum;
+    return sum == num;
 }
 int main() {
     int number;
     cout << "Enter a number: "; 
     cin >> number;
-    int result = sumOfDigits(number);
-    cout << "The sum of digits of " << number << " is " << result << "." << endl;
+    if (isPerfect(number)) {
+        cout << number << " is a perfect number." << endl;
+    } else {
+        cout << number << " is not a perfect number." << endl;
+    }
     return 0;
 }
