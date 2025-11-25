@@ -613,25 +613,41 @@
 
 
 //function to check if a number is perfect number
+// #include <iostream>
+// using namespace std;
+// bool isPerfect(int num) {
+//     int sum = 0;
+//     for (int i = 1; i <= num / 2; i++) {
+//         if (num % i == 0) {
+//             sum += i;
+//         }
+//     }
+//     return sum == num;
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     if (isPerfect(number)) {
+//         cout << number << " is a perfect number." << endl;
+//     } else {
+//         cout << number << " is not a perfect number." << endl;
+//     }
+//     return 0;
+// }
+
+
+//function to find the sum of natural numbers up to n
 #include <iostream>
 using namespace std;
-bool isPerfect(int num) {
-    int sum = 0;
-    for (int i = 1; i <= num / 2; i++) {
-        if (num % i == 0) {
-            sum += i;
-        }
-    }
-    return sum == num;
+int sumOfNaturalNumbers(int n) {
+    return n * (n + 1) / 2;
 }
 int main() {
     int number;
     cout << "Enter a number: "; 
     cin >> number;
-    if (isPerfect(number)) {
-        cout << number << " is a perfect number." << endl;
-    } else {
-        cout << number << " is not a perfect number." << endl;
-    }
+    int result = sumOfNaturalNumbers(number);
+    cout << "The sum of natural numbers up to " << number << " is " << result << "." << endl;
     return 0;
-}
+}   
