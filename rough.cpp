@@ -638,16 +638,34 @@
 
 
 //function to find the sum of natural numbers up to n
+// #include <iostream>
+// using namespace std;
+// int sumOfNaturalNumbers(int n) {
+//     return n * (n + 1) / 2;
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     int result = sumOfNaturalNumbers(number);
+//     cout << "The sum of natural numbers up to " << number << " is " << result << "." << endl;
+//     return 0;
+// }   
+
+//function to find the factorial of a number
 #include <iostream>
 using namespace std;
-int sumOfNaturalNumbers(int n) {
-    return n * (n + 1) / 2;
+unsigned long long factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
 }
 int main() {
     int number;
     cout << "Enter a number: "; 
     cin >> number;
-    int result = sumOfNaturalNumbers(number);
-    cout << "The sum of natural numbers up to " << number << " is " << result << "." << endl;
+    unsigned long long result = factorial(number);
+    cout << "The factorial of " << number << " is " << result << "." << endl;
     return 0;
-}   
+}
