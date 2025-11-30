@@ -28,8 +28,37 @@
 
 
 //print all prime numbers up to n
+// #include <iostream>
+// using namespace std;    
+// bool isPrime(int n){
+//     if(n==1){
+//         return false;
+//     }
+//     for(int i=2; i<=n-1; i++){
+//         if(n%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }   
+// int main(){
+//     int n;
+//     cout<<"Enter a number: ";
+//     cin>>n;
+//     cout<<"Prime numbers up to "<<n<<" are: "<<endl;
+//     for(int i=2; i<=n; i++){
+//         if(isPrime(i)){
+//             cout<<i<<" ";
+//         }
+//     }
+//     cout<<endl;
+//     return 0;
+// }
+
+
+//print first n prime numbers
 #include <iostream>
-using namespace std;    
+using namespace std;
 bool isPrime(int n){
     if(n==1){
         return false;
@@ -40,16 +69,18 @@ bool isPrime(int n){
         }
     }
     return true;
-}   
+}
 int main(){
-    int n;
-    cout<<"Enter a number: ";
+    int n,count=0,num=2;
+    cout<<"Enter the number of prime numbers to print: ";
     cin>>n;
-    cout<<"Prime numbers up to "<<n<<" are: "<<endl;
-    for(int i=2; i<=n; i++){
-        if(isPrime(i)){
-            cout<<i<<" ";
+    cout<<"First "<<n<<" prime numbers are: "<<endl;
+    while(count<n){
+        if(isPrime(num)){
+            cout<<num<<" ";
+            count++;
         }
+        num++;
     }
     cout<<endl;
     return 0;
