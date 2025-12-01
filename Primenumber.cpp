@@ -57,31 +57,53 @@
 
 
 //print first n prime numbers
+// #include <iostream>
+// using namespace std;
+// bool isPrime(int n){
+//     if(n==1){
+//         return false;
+//     }
+//     for(int i=2; i<=n-1; i++){
+//         if(n%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// int main(){
+//     int n,count=0,num=2;
+//     cout<<"Enter the number of prime numbers to print: ";
+//     cin>>n;
+//     cout<<"First "<<n<<" prime numbers are: "<<endl;
+//     while(count<n){
+//         if(isPrime(num)){
+//             cout<<num<<" ";
+//             count++;
+//         }
+//         num++;
+//     }
+//     cout<<endl;
+//     return 0;
+// }
+
+
+//prime factorization of a number
 #include <iostream>
 using namespace std;
-bool isPrime(int n){
-    if(n==1){
-        return false;
-    }
-    for(int i=2; i<=n-1; i++){
-        if(n%i==0){
-            return false;
+void primeFactorization(int n){
+    for(int i=2; i<=n; i++){
+        while(n%i==0){
+            cout<<i<<" ";
+            n=n/i;
         }
     }
-    return true;
 }
 int main(){
-    int n,count=0,num=2;
-    cout<<"Enter the number of prime numbers to print: ";
-    cin>>n;
-    cout<<"First "<<n<<" prime numbers are: "<<endl;
-    while(count<n){
-        if(isPrime(num)){
-            cout<<num<<" ";
-            count++;
-        }
-        num++;
-    }
+    int num;
+    cout<<"Enter a number: ";
+    cin>>num;
+    cout<<"Prime factorization of "<<   num<<" is: "<<endl;
+    primeFactorization(num);
     cout<<endl;
     return 0;
 }
