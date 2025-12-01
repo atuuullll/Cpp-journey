@@ -88,22 +88,57 @@
 
 
 //prime factorization of a number
+// #include <iostream>
+// using namespace std;
+// void primeFactorization(int n){
+//     for(int i=2; i<=n; i++){
+//         while(n%i==0){
+//             cout<<i<<" ";
+//             n=n/i;
+//         }
+//     }
+// }
+// int main(){
+//     int num;
+//     cout<<"Enter a number: ";
+//     cin>>num;
+//     cout<<"Prime factorization of "<<   num<<" is: "<<endl;
+//     primeFactorization(num);
+//     cout<<endl;
+//     return 0;
+// }
+
+
+//return nth prime number
 #include <iostream>
 using namespace std;
-void primeFactorization(int n){
-    for(int i=2; i<=n; i++){
-        while(n%i==0){
-            cout<<i<<" ";
-            n=n/i;
+bool isPrime(int n){
+    if(n==1){
+        return false;
+    }
+    for(int i=2; i<=n-1; i++){
+        if(n%i==0){
+            return false;
         }
+    }
+    return true;
+}
+int nthPrime(int n){
+    int count=0,num=2;
+    while(true){
+        if(isPrime(num)){       
+            count++;
+            if(count==n){
+                return num;
+            }
+        }
+        num++;  
     }
 }
 int main(){
-    int num;
-    cout<<"Enter a number: ";
-    cin>>num;
-    cout<<"Prime factorization of "<<   num<<" is: "<<endl;
-    primeFactorization(num);
-    cout<<endl;
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+    cout<<n<<"th prime number is: "<<nthPrime(n)<<endl;
     return 0;
 }
