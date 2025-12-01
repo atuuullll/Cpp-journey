@@ -110,35 +110,66 @@
 
 
 //return nth prime number
+// #include <iostream>
+// using namespace std;
+// bool isPrime(int n){
+//     if(n==1){
+//         return false;
+//     }
+//     for(int i=2; i<=n-1; i++){
+//         if(n%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// int nthPrime(int n){
+//     int count=0,num=2;
+//     while(true){
+//         if(isPrime(num)){       
+//             count++;
+//             if(count==n){
+//                 return num;
+//             }
+//         }
+//         num++;  
+//     }
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter the value of n: ";
+//     cin>>n;
+//     cout<<n<<"th prime number is: "<<nthPrime(n)<<endl;
+//     return 0;
+// }
+
+
+//Sieve of Eratosthenes to print all prime numbers up to n
 #include <iostream>
+#include <vector>
 using namespace std;
-bool isPrime(int n){
-    if(n==1){
-        return false;
-    }
-    for(int i=2; i<=n-1; i++){
-        if(n%i==0){
-            return false;
-        }
-    }
-    return true;
-}
-int nthPrime(int n){
-    int count=0,num=2;
-    while(true){
-        if(isPrime(num)){       
-            count++;
-            if(count==n){
-                return num;
+void sieveOfEratosthenes(int n){
+    vector<bool> prime(n+1, true);
+    prime[0]=prime[1]=false;
+    for(int i=2; i*i<=n; i++){
+        if(prime[i]){
+            for(int j=i*i; j<=n; j+=i){
+                prime[j]=false;
             }
         }
-        num++;  
     }
+    cout<<"Prime numbers up to "<<n<<" are: "<<endl;
+    for(int i=2; i<=n; i++){
+        if(prime[i]){
+            cout<<i<<" ";
+        }
+    }
+    cout<<endl;
 }
 int main(){
     int n;
-    cout<<"Enter the value of n: ";
+    cout<<"Enter a number: ";
     cin>>n;
-    cout<<n<<"th prime number is: "<<nthPrime(n)<<endl;
+    sieveOfEratosthenes(n);
     return 0;
 }
