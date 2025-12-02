@@ -176,32 +176,58 @@
 
 
 //Count number of prime numbers up to n
+// #include <iostream>
+// using namespace std;
+// bool isPrime(int n){
+//     if(n==1){
+//         return false;
+//     }
+//     for(int i=2; i<=n-1; i++){
+//         if(n%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// int countPrimes(int n){
+//     int count=0;
+//     for(int i=2; i<=n; i++){
+//         if(isPrime(i)){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a number: ";
+//     cin>>n;
+//     cout<<"Number of prime numbers up to "<<n<<" is: "<<countPrimes(n)<<endl;
+//     return 0;
+// }   
+
+
+//Check if two numbers are coprime
 #include <iostream>
-using namespace std;
-bool isPrime(int n){
-    if(n==1){
-        return false;
+using namespace std;        
+int gcd(int a, int b){
+    if(b==0){
+        return a;
     }
-    for(int i=2; i<=n-1; i++){
-        if(n%i==0){
-            return false;
-        }
-    }
-    return true;
-}
-int countPrimes(int n){
-    int count=0;
-    for(int i=2; i<=n; i++){
-        if(isPrime(i)){
-            count++;
-        }
-    }
-    return count;
+    return gcd(b, a%b);
+}   
+bool areCoprime(int a, int b){
+    return gcd(a, b)==1;
 }
 int main(){
-    int n;
-    cout<<"Enter a number: ";
-    cin>>n;
-    cout<<"Number of prime numbers up to "<<n<<" is: "<<countPrimes(n)<<endl;
+    int num1, num2;
+    cout<<"Enter two numbers: ";
+    cin>>num1>>num2;            
+    if(areCoprime(num1, num2)){
+        cout<<num1<<" and "<<num2<<" are coprime numbers."<<endl;
+    }
+    else{
+        cout<<num1<<" and "<<num2<<" are not coprime numbers."<<endl;
+    }
     return 0;
 }   
