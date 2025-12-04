@@ -157,10 +157,57 @@
 // }
 
 //Matrix Multiplication
+// #include<iostream>
+// using namespace std;
+// int main() {
+//     int matrixA[2][2], matrixB[2][2], productMatrix[2][2] = {0};  
+//     cout << "Enter elements of Matrix A (2x2):\n";
+//     for(int i=0; i<2; i++){
+//         for(int j=0; j<2; j++){
+//             cout << "Element [" << i + 1 << "][" << j + 1 << "]: ";
+//             cin >> matrixA[i][j];
+//         }
+//     }
+//     cout << "Enter elements of Matrix B (2x2):\n";
+//     for(int i=0; i<2; i++){
+//         for(int j=0; j<2; j++){
+//             cout << "Element [" << i + 1 << "][" << j + 1 << "]: ";
+//             cin >> matrixB[i][j];
+//         }
+//     }   
+//     for(int i=0; i<2; i++){
+//         for(int j=0; j<2; j++){
+//             for(int k=0; k<2; k++){
+//                 productMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
+//             }
+//         }
+//     }   
+//     cout << "Product of Matrix A and Matrix B is:\n";
+//     for(int i=0; i<2; i++){
+//         for(int j=0; j<2; j++){
+//             cout << productMatrix[i][j] << "\t";
+//         }
+//         cout << endl;
+//     }
+//     return 0;
+// }
+
+
+//Matrix Multiplication using functions
 #include<iostream>
 using namespace std;
+void multiplyMatrices(int matrixA[2][2], int matrixB[2][2], int productMatrix[2][2]) {
+    for(int i=0; i<2; i++){
+        for(int j=0; j<2; j++){
+            productMatrix[i][j] = 0;
+            for(int k=0; k<2; k++){
+                productMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
+            }
+        }   
+    }
+}
 int main() {
-    int matrixA[2][2], matrixB[2][2], productMatrix[2][2] = {0};  
+    int matrixA[2][2], matrixB[2][2], productMatrix[2][2];  
     cout << "Enter elements of Matrix A (2x2):\n";
     for(int i=0; i<2; i++){
         for(int j=0; j<2; j++){
@@ -175,13 +222,7 @@ int main() {
             cin >> matrixB[i][j];
         }
     }   
-    for(int i=0; i<2; i++){
-        for(int j=0; j<2; j++){
-            for(int k=0; k<2; k++){
-                productMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
-            }
-        }
-    }   
+    multiplyMatrices(matrixA, matrixB, productMatrix);
     cout << "Product of Matrix A and Matrix B is:\n";
     for(int i=0; i<2; i++){
         for(int j=0; j<2; j++){
