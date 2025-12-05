@@ -234,32 +234,57 @@
 
 
 //prime number check using recursion
-#include <iostream>
+// #include <iostream>
+// using namespace std;
+// bool isPrimeUtil(int n, int i){
+//     if(n<=2){
+//         return (n==2);
+//     }
+//     if(n%i==0){
+//         return false;
+//     }
+//     if(i*i>n){
+//         return true;
+//     }
+//     return isPrimeUtil(n, i+1);
+// }
+// bool isPrime(int n){
+//     return isPrimeUtil(n, 2);
+// }
+// int main(){
+//     int num;
+//     cout<<"Enter a number: ";
+//     cin>>num;
+//     if(isPrime(num)){
+//         cout<<num<<" is a prime number."<<endl;
+//     }
+//     else{
+//         cout<<num<<" is not a prime number."<<endl;
+//     }
+//     return 0;
+// }
+
+
+//Matrix Input and Output
+#include<iostream>
 using namespace std;
-bool isPrimeUtil(int n, int i){
-    if(n<=2){
-        return (n==2);
-    }
-    if(n%i==0){
-        return false;
-    }
-    if(i*i>n){
-        return true;
-    }
-    return isPrimeUtil(n, i+1);
-}
-bool isPrime(int n){
-    return isPrimeUtil(n, 2);
-}
-int main(){
-    int num;
-    cout<<"Enter a number: ";
-    cin>>num;
-    if(isPrime(num)){
-        cout<<num<<" is a prime number."<<endl;
-    }
-    else{
-        cout<<num<<" is not a prime number."<<endl;
+int main() {
+    int matrix[10][10], n;  
+    cout << "Enter size of square matrix (n x n): ";
+    cin >> n;
+    cout << "Enter elements of the matrix:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "Element [" << i + 1 << "][" << j + 1 << "]: ";
+            cin >> matrix[i][j];
+        }
+    }   
+    cout << "\nMatrix:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
     }
     return 0;
 }
