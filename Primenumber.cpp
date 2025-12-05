@@ -208,26 +208,58 @@
 
 
 //Check if two numbers are coprime
+// #include <iostream>
+// using namespace std;        
+// int gcd(int a, int b){
+//     if(b==0){
+//         return a;
+//     }
+//     return gcd(b, a%b);
+// }   
+// bool areCoprime(int a, int b){
+//     return gcd(a, b)==1;
+// }
+// int main(){
+//     int num1, num2;
+//     cout<<"Enter two numbers: ";
+//     cin>>num1>>num2;            
+//     if(areCoprime(num1, num2)){
+//         cout<<num1<<" and "<<num2<<" are coprime numbers."<<endl;
+//     }
+//     else{
+//         cout<<num1<<" and "<<num2<<" are not coprime numbers."<<endl;
+//     }
+//     return 0;
+// }   
+
+
+//prime number check using recursion
 #include <iostream>
-using namespace std;        
-int gcd(int a, int b){
-    if(b==0){
-        return a;
+using namespace std;
+bool isPrimeUtil(int n, int i){
+    if(n<=2){
+        return (n==2);
     }
-    return gcd(b, a%b);
-}   
-bool areCoprime(int a, int b){
-    return gcd(a, b)==1;
+    if(n%i==0){
+        return false;
+    }
+    if(i*i>n){
+        return true;
+    }
+    return isPrimeUtil(n, i+1);
+}
+bool isPrime(int n){
+    return isPrimeUtil(n, 2);
 }
 int main(){
-    int num1, num2;
-    cout<<"Enter two numbers: ";
-    cin>>num1>>num2;            
-    if(areCoprime(num1, num2)){
-        cout<<num1<<" and "<<num2<<" are coprime numbers."<<endl;
+    int num;
+    cout<<"Enter a number: ";
+    cin>>num;
+    if(isPrime(num)){
+        cout<<num<<" is a prime number."<<endl;
     }
     else{
-        cout<<num1<<" and "<<num2<<" are not coprime numbers."<<endl;
+        cout<<num<<" is not a prime number."<<endl;
     }
     return 0;
-}   
+}
