@@ -41,23 +41,56 @@
 
 
 //odd even checker for an array
+// #include <iostream>
+// using namespace std;
+// void oddEvenArray(int arr[], int size){
+//     cout<<"Odd numbers in the array:"<<endl;
+//     for(int i=0; i<size; i++){
+//         if(arr[i]%2!=0){
+//             cout<<arr[i]<<" ";
+//         }
+//     }
+//     cout<<endl;
+//     cout<<"Even numbers in the array:"<<endl;
+//     for(int i=0; i<size; i++){
+//         if(arr[i]%2==0){
+//             cout<<arr[i]<<" ";
+//         }
+//     }
+//     cout<<endl;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter the size of the array: ";
+//     cin>>n;
+//     int arr[n];
+//     cout<<"Enter "<<n<<" elements:"<<endl;
+//     for(int i=0; i<n; i++){
+//         cin>>arr[i];
+//     }
+//     oddEvenArray(arr, n);
+//     return 0;
+// }   
+
+
+//odd even sum difference
 #include <iostream>
 using namespace std;
-void oddEvenArray(int arr[], int size){
-    cout<<"Odd numbers in the array:"<<endl;
-    for(int i=0; i<size; i++){
-        if(arr[i]%2!=0){
-            cout<<arr[i]<<" ";
-        }
-    }
-    cout<<endl;
-    cout<<"Even numbers in the array:"<<endl;
+void oddEvenSumDifference(int arr[], int size){
+    int oddSum = 0;
+    int evenSum = 0;
     for(int i=0; i<size; i++){
         if(arr[i]%2==0){
-            cout<<arr[i]<<" ";
+            evenSum += arr[i];
+        }
+        else{
+            oddSum += arr[i];
         }
     }
-    cout<<endl;
+    int difference = oddSum - evenSum;
+    cout<<"Sum of odd numbers: "<<oddSum<<endl;
+    cout<<"Sum of even numbers: "<<evenSum<<endl;
+    cout<<"Difference (Odd - Even): "<<difference<<endl;
 }
 int main(){
     int n;
@@ -68,6 +101,6 @@ int main(){
     for(int i=0; i<n; i++){
         cin>>arr[i];
     }
-    oddEvenArray(arr, n);
+    oddEvenSumDifference(arr, n);
     return 0;
-}   
+}
