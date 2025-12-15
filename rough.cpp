@@ -722,6 +722,29 @@
 
 
 //pattern to print a hollow square
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter the value of n: ";
+//     cin>>n;
+//     for(int i=1; i<=n; i++){
+//         cout<<" * ";
+//         for(int j=1; j<=n-1;j++){
+//             if(i==1 || i==n){
+//                 cout<<" * ";
+//             }
+//             else {
+//                 cout<<"   ";
+//             }
+//         }
+//         cout<<" * "<<endl;
+//     }
+//     return 0;
+// }
+
+
+//pattern to print a right-aligned triangle
 #include<iostream>
 using namespace std;
 int main(){
@@ -729,16 +752,13 @@ int main(){
     cout<<"Enter the value of n: ";
     cin>>n;
     for(int i=1; i<=n; i++){
-        cout<<" * ";
-        for(int j=1; j<=n-1;j++){
-            if(i==1 || i==n){
-                cout<<" * ";
-            }
-            else {
-                cout<<"   ";
-            }
+        for(int j=1;j<=n-i; j++){
+            cout<<" ";      
         }
-        cout<<" * "<<endl;
+        for(int k=1; k<=i; k++){
+            cout<<"*";
+        }
+        cout<<endl;
     }
     return 0;
 }
