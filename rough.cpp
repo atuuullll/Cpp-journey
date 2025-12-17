@@ -744,7 +744,27 @@
 // }
 
 
-//pattern to print a right-aligned triangle
+// //pattern to print a right-aligned triangle
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter the value of n: ";
+//     cin>>n;
+//     for(int i=1; i<=n; i++){
+//         for(int j=1;j<=n-i; j++){
+//             cout<<" ";      
+//         }
+//         for(int k=1; k<=i; k++){
+//             cout<<"*";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+//}
+
+
+//pattern to print a full diamond
 #include<iostream>
 using namespace std;
 int main(){
@@ -752,13 +772,22 @@ int main(){
     cout<<"Enter the value of n: ";
     cin>>n;
     for(int i=1; i<=n; i++){
-        for(int j=1;j<=n-i; j++){
-            cout<<" ";      
+        for(int j=i; j<n; j++){
+            cout<<" ";
         }
-        for(int k=1; k<=i; k++){
+        for(int k=1;k<=2*i-1; k++){
             cout<<"*";
         }
         cout<<endl;
+    }
+    for(int i=n-1; i>=1; i--){
+        for(int j=i; j<n; j++){
+            cout<<" ";
+        }
+        for(int k=1; k<=2*i-1; k++){
+            cout<<"*";
+        }
+        cout<<endl; 
     }
     return 0;
 }
