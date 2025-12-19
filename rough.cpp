@@ -815,24 +815,51 @@
 // }
 
 //function to check if a number is prime
+// #include<iostream>
+// using namespace std;
+// void checkPrime(int n){
+//      for(int i=2; i<=n; i++){
+//         if(n%i==0){
+//             cout<<"The number is not prime"<<endl;
+//             break;
+//         }
+//         else{
+//             cout<<"The number is prime"<<endl;
+//             break;
+//         }
+//     }
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter a number: ";
+//     cin>>n;
+//     checkPrime(n);
+//     return 0;   
+// }
+
+
+//function to print even and odd numbers in an array
 #include<iostream>
 using namespace std;
-void checkPrime(int n){
-     for(int i=2; i<=n; i++){
-        if(n%i==0){
-            cout<<"The number is not prime"<<endl;
-            break;
-        }
-        else{
-            cout<<"The number is prime"<<endl;
-            break;
+void printEvenOdd(int arr[], int n){
+    cout<<"Even numbers: ";
+    for(int i=0;i<n;i++){
+        if(arr[i]%2==0){
+            cout<<arr[i]<<" ";
         }
     }
+    cout<<endl;
+    cout<<"Odd numbers: ";
+    for(int i=0; i<n; i++){
+        if(arr[i]%2!=0){
+            cout<<arr[i]<<" ";  
+        }
+    }
+    cout<<endl;
 }
 int main(){
-    int n;
-    cout<<"Enter a number: ";
-    cin>>n;
-    checkPrime(n);
-    return 0;   
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    printEvenOdd(arr, n);
+    return 0;
 }
