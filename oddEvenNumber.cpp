@@ -74,33 +74,56 @@
 
 
 //odd even sum difference
-#include <iostream>
+// #include <iostream>
+// using namespace std;
+// void oddEvenSumDifference(int arr[], int size){
+//     int oddSum = 0;
+//     int evenSum = 0;
+//     for(int i=0; i<size; i++){
+//         if(arr[i]%2==0){
+//             evenSum += arr[i];
+//         }
+//         else{
+//             oddSum += arr[i];
+//         }
+//     }
+//     int difference = oddSum - evenSum;
+//     cout<<"Sum of odd numbers: "<<oddSum<<endl;
+//     cout<<"Sum of even numbers: "<<evenSum<<endl;
+//     cout<<"Difference (Odd - Even): "<<difference<<endl;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter the size of the array: ";
+//     cin>>n;
+//     int arr[n];
+//     cout<<"Enter "<<n<<" elements:"<<endl;
+//     for(int i=0; i<n; i++){
+//         cin>>arr[i];
+//     }
+//     oddEvenSumDifference(arr, n);
+//     return 0;
+// }
+
+//print even and odd numbers in an array
+#include<iostream>
 using namespace std;
-void oddEvenSumDifference(int arr[], int size){
-    int oddSum = 0;
-    int evenSum = 0;
-    for(int i=0; i<size; i++){
-        if(arr[i]%2==0){
-            evenSum += arr[i];
-        }
-        else{
-            oddSum += arr[i];
-        }
-    }
-    int difference = oddSum - evenSum;
-    cout<<"Sum of odd numbers: "<<oddSum<<endl;
-    cout<<"Sum of even numbers: "<<evenSum<<endl;
-    cout<<"Difference (Odd - Even): "<<difference<<endl;
-}
 int main(){
-    int n;
-    cout<<"Enter the size of the array: ";
-    cin>>n;
-    int arr[n];
-    cout<<"Enter "<<n<<" elements:"<<endl;
-    for(int i=0; i<n; i++){
-        cin>>arr[i];
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout<<"Even numbers: ";
+    for(int i=0;i<n;i++){
+        if(arr[i]%2==0){
+            cout<<arr[i]<<" ";
+        }
     }
-    oddEvenSumDifference(arr, n);
+    cout<<endl;
+    cout<<"Odd numbers: ";
+    for(int i=0;i<n;i++){
+        if(arr[i]%2!=0){
+            cout<<arr[i]<<" ";
+        }
+    }
+    cout<<endl;
     return 0;
 }
