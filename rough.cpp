@@ -865,24 +865,53 @@
 // }
 
 //function to print even and odd numbers in an array
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     cout<<"Even numbers: ";
+//     for(int i=0;i<n;i++){
+//         if(arr[i]%2==0){
+//             cout<<arr[i]<<" ";
+//         }
+//     }
+//     cout<<endl;
+//     cout<<"Odd numbers: ";
+//     for(int i=0;i<n;i++){
+//         if(arr[i]%2!=0){
+//             cout<<arr[i]<<" ";
+//         }
+//     }
+//     cout<<endl;
+//     return 0;
+// }
+
+
+
+//function to check if a number is prime
 #include<iostream>
 using namespace std;
+bool isPrime(int n){
+    if(n==1){
+        return false;
+    }
+    for(int i=2; i<=n-1; i++){
+        if(n%i==0){
+            return false;
+        }
+    }
+    return true;
+}
 int main(){
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    cout<<"Even numbers: ";
-    for(int i=0;i<n;i++){
-        if(arr[i]%2==0){
-            cout<<arr[i]<<" ";
-        }
+    int num;
+    cout<<"Enter a number: ";
+    cin>>num;
+    if(isPrime(num)){
+        cout<<num<<" is a prime number."<<endl;
     }
-    cout<<endl;
-    cout<<"Odd numbers: ";
-    for(int i=0;i<n;i++){
-        if(arr[i]%2!=0){
-            cout<<arr[i]<<" ";
-        }
+    else{
+        cout<<num<<" is not a prime number."<<endl;
     }
-    cout<<endl;
     return 0;
 }
