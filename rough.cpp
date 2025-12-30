@@ -839,9 +839,37 @@
 
 
 //function to print even and odd numbers in an array
+// #include<iostream>
+// using namespace std;
+// void printEvenOdd(int arr[], int n){
+//     cout<<"Even numbers: ";
+//     for(int i=0;i<n;i++){
+//         if(arr[i]%2==0){
+//             cout<<arr[i]<<" ";
+//         }
+//     }
+//     cout<<endl;
+//     cout<<"Odd numbers: ";
+//     for(int i=0; i<n; i++){
+//         if(arr[i]%2!=0){
+//             cout<<arr[i]<<" ";  
+//         }
+//     }
+//     cout<<endl;
+// }
+// int main(){
+//     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     printEvenOdd(arr, n);
+//     return 0;
+// }
+
+//function to print even and odd numbers in an array
 #include<iostream>
 using namespace std;
-void printEvenOdd(int arr[], int n){
+int main(){
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int n = sizeof(arr)/sizeof(arr[0]);
     cout<<"Even numbers: ";
     for(int i=0;i<n;i++){
         if(arr[i]%2==0){
@@ -850,16 +878,11 @@ void printEvenOdd(int arr[], int n){
     }
     cout<<endl;
     cout<<"Odd numbers: ";
-    for(int i=0; i<n; i++){
+    for(int i=0;i<n;i++){
         if(arr[i]%2!=0){
-            cout<<arr[i]<<" ";  
+            cout<<arr[i]<<" ";
         }
     }
     cout<<endl;
-}
-int main(){
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    printEvenOdd(arr, n);
     return 0;
 }
