@@ -890,28 +890,64 @@
 
 
 //function to check if a number is prime
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+// bool isPrime(int n){
+//     if(n==1){
+//         return false;
+//     }
+//     for(int i=2; i<=n-1; i++){
+//         if(n%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// int main(){
+//     int num;
+//     cout<<"Enter a number: ";
+//     cin>>num;
+//     if(isPrime(num)){
+//         cout<<num<<" is a prime number."<<endl;
+//     }
+//     else{
+//         cout<<num<<" is not a prime number."<<endl;
+//     }
+//     return 0;
+// }
+
+//array rotation using reversal algorithm
+#include <iostream>
 using namespace std;
-bool isPrime(int n){
-    if(n==1){
-        return false;
+void reverse(int arr[], int start, int end) {
+    while(start < end){
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
     }
-    for(int i=2; i<=n-1; i++){
-        if(n%i==0){
-            return false;
-        }
-    }
-    return true;
 }
-int main(){
-    int num;
-    cout<<"Enter a number: ";
-    cin>>num;
-    if(isPrime(num)){
-        cout<<num<<" is a prime number."<<endl;
+void rotateArray(int arr[], int n, int k) {
+    k = k % n;
+    reverse(arr, 0, k - 1);
+    reverse(arr, k, n - 1);
+    reverse(arr, 0, n - 1);
+}
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int k;
+    cout<<"Enter the number of rotations: ";
+    cin>>k;
+    cout<<"Original array: ";
+    for(int i = 0; i < n; i++){
+        cout<<arr[i]<<" ";  
     }
-    else{
-        cout<<num<<" is not a prime number."<<endl;
+    cout<<endl;
+    rotateArray(arr, n, k);
+    cout<<"Rotated array: ";
+    for(int i = 0; i < n; i++){
+        cout<<arr[i]<<" ";  
     }
+    cout<<endl;
     return 0;
 }
