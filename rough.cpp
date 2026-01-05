@@ -917,37 +917,62 @@
 // }
 
 //array rotation using reversal algorithm
+// #include <iostream>
+// using namespace std;
+// void reverse(int arr[], int start, int end) {
+//     while(start < end){
+//         swap(arr[start], arr[end]);
+//         start++;
+//         end--;
+//     }
+// }
+// void rotateArray(int arr[], int n, int k) {
+//     k = k % n;
+//     reverse(arr, 0, k - 1);
+//     reverse(arr, k, n - 1);
+//     reverse(arr, 0, n - 1);
+// }
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     int k;
+//     cout<<"Enter the number of rotations: ";
+//     cin>>k;
+//     cout<<"Original array: ";
+//     for(int i = 0; i < n; i++){
+//         cout<<arr[i]<<" ";  
+//     }
+//     cout<<endl;
+//     rotateArray(arr, n, k);
+//     cout<<"Rotated array: ";
+//     for(int i = 0; i < n; i++){
+//         cout<<arr[i]<<" ";  
+//     }
+//     cout<<endl;
+//     return 0;
+// }
+
+
+//check if a number is perfect number
 #include <iostream>
 using namespace std;
-void reverse(int arr[], int start, int end) {
-    while(start < end){
-        swap(arr[start], arr[end]);
-        start++;
-        end--;
+bool isPerfect(int num) {
+    int sum = 0;
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
     }
-}
-void rotateArray(int arr[], int n, int k) {
-    k = k % n;
-    reverse(arr, 0, k - 1);
-    reverse(arr, k, n - 1);
-    reverse(arr, 0, n - 1);
+    return sum == num;
 }
 int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    int k;
-    cout<<"Enter the number of rotations: ";
-    cin>>k;
-    cout<<"Original array: ";
-    for(int i = 0; i < n; i++){
-        cout<<arr[i]<<" ";  
+    int number;
+    cout << "Enter a number: "; 
+    cin >> number;
+    if (isPerfect(number)) {
+        cout << number << " is a perfect number." << endl;
+    } else {
+        cout << number << " is not a perfect number." << endl;
     }
-    cout<<endl;
-    rotateArray(arr, n, k);
-    cout<<"Rotated array: ";
-    for(int i = 0; i < n; i++){
-        cout<<arr[i]<<" ";  
-    }
-    cout<<endl;
     return 0;
 }
