@@ -979,16 +979,51 @@
 
 
 //sum of natural numbers up to n
+// #include <iostream>
+// using namespace std;
+// int sumOfNaturalNumbers(int n) {
+//     return n * (n + 1) / 2;
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     int result = sumOfNaturalNumbers(number);
+//     cout << "The sum of natural numbers up to " << number << " is " << result << "." << endl;
+//     return 0;
+// }
+
+
+//factorial of a number
+// #include <iostream>
+// using namespace std;
+// unsigned long long factorial(int n) {
+//     if (n == 0 || n == 1) {
+//         return 1;
+//     }
+//     return n * factorial(n - 1);
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     unsigned long long result = factorial(number);
+//     cout << "The factorial of " << number << " is " << result << "." << endl;
+//     return 0;
+// }
+
+//pattern to print a square of numbers
 #include <iostream>
 using namespace std;
-int sumOfNaturalNumbers(int n) {
-    return n * (n + 1) / 2;
-}
 int main() {
-    int number;
-    cout << "Enter a number: "; 
-    cin >> number;
-    int result = sumOfNaturalNumbers(number);
-    cout << "The sum of natural numbers up to " << number << " is " << result << "." << endl;
+    int n;  
+    cout << "Enter the value of n: "; 
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
