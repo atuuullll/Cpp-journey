@@ -1029,17 +1029,33 @@
 // }
 
 //pattern to print a right-angled triangle of numbers
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"Enter the value of n: ";
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<i<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+//print Floyd's triangle
 #include<iostream>
 using namespace std;
 int main(){
-    int n;
+    int n, num = 1;
     cout<<"Enter the value of n: ";
     cin>>n;
     for(int i=1;i<=n;i++){
         for(int j=1;j<=i;j++){
-            cout<<i<<" ";
-        }
+            cout<<num++<<" ";
+        }       
         cout<<endl;
     }
     return 0;
-}
+}  
