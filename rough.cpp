@@ -1061,23 +1061,67 @@
 // }  
 
 //check palindrome number
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n, k, a=0, b;
+//     cout<<"Enter a number: ";
+//     cin>>n;
+//     k=n;
+//     while(n>0){
+//         b=n%10;
+//         a=a*10+b;
+//         n=n/10; 
+//     }
+//     if(a==k){
+//         cout<<"The number is a palindrome number"<<endl;
+//     }
+//     else{
+//         cout<<"The number is not a palindrome number"<<endl;
+//     }
+//     return 0;
+// }
+
+
+//check longest palindromic substring in a string
+#include <iostream>
+#include <string>
 using namespace std;
-int main(){
-    int n, k, a=0, b;
-    cout<<"Enter a number: ";
-    cin>>n;
-    k=n;
-    while(n>0){
-        b=n%10;
-        a=a*10+b;
-        n=n/10; 
+string longestPalindromicSubstring(const string& str) {
+    int n = str.length();
+    if (n == 0) return "";
+    int start = 0, maxLength = 1;
+    for (int i = 0; i < n; i++) {
+        // Odd length palindromes
+        int low = i - 1;
+        int high = i + 1;   
+        while (low >= 0 && high < n && str[low] == str[high]) {
+            if (high - low + 1 > maxLength) {
+                start = low;
+                maxLength = high - low + 1;
+            }
+            low--;
+            high++;
+        }
+        // Even length palindromes
+        low = i;
+        high = i + 1;
+        while (low >= 0 && high < n && str[low] == str[high]) {
+            if (high - low + 1 > maxLength) {
+                start = low;    
+                maxLength = high - low + 1;
+            }
+            low--;
+            high++;
+        }
     }
-    if(a==k){
-        cout<<"The number is a palindrome number"<<endl;
-    }
-    else{
-        cout<<"The number is not a palindrome number"<<endl;
-    }
+    return str.substr(start, maxLength);
+}
+int main() {
+    string str;
+    cout << "Enter a string: "; 
+    getline(cin, str);
+    string result = longestPalindromicSubstring(str);
+    cout << "The longest palindromic substring is: " << result << endl;
     return 0;
 }
