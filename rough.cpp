@@ -1045,17 +1045,39 @@
 // }
 
 //print Floyd's triangle
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n, num = 1;
+//     cout<<"Enter the value of n: ";
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<num++<<" ";
+//         }       
+//         cout<<endl;
+//     }
+//     return 0;
+// }  
+
+//check palindrome number
 #include<iostream>
 using namespace std;
 int main(){
-    int n, num = 1;
-    cout<<"Enter the value of n: ";
+    int n, k, a=0, b;
+    cout<<"Enter a number: ";
     cin>>n;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            cout<<num++<<" ";
-        }       
-        cout<<endl;
+    k=n;
+    while(n>0){
+        b=n%10;
+        a=a*10+b;
+        n=n/10; 
+    }
+    if(a==k){
+        cout<<"The number is a palindrome number"<<endl;
+    }
+    else{
+        cout<<"The number is not a palindrome number"<<endl;
     }
     return 0;
-}  
+}
