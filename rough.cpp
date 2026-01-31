@@ -1084,44 +1084,64 @@
 
 
 //check longest palindromic substring in a string
+// #include <iostream>
+// #include <string>
+// using namespace std;
+// string longestPalindromicSubstring(const string& str) {
+//     int n = str.length();
+//     if (n == 0) return "";
+//     int start = 0, maxLength = 1;
+//     for (int i = 0; i < n; i++) {
+//         // Odd length palindromes
+//         int low = i - 1;
+//         int high = i + 1;   
+//         while (low >= 0 && high < n && str[low] == str[high]) {
+//             if (high - low + 1 > maxLength) {
+//                 start = low;
+//                 maxLength = high - low + 1;
+//             }
+//             low--;
+//             high++;
+//         }
+//         // Even length palindromes
+//         low = i;
+//         high = i + 1;
+//         while (low >= 0 && high < n && str[low] == str[high]) {
+//             if (high - low + 1 > maxLength) {
+//                 start = low;    
+//                 maxLength = high - low + 1;
+//             }
+//             low--;
+//             high++;
+//         }
+//     }
+//     return str.substr(start, maxLength);
+// }
+// int main() {
+//     string str;
+//     cout << "Enter a string: "; 
+//     getline(cin, str);
+//     string result = longestPalindromicSubstring(str);
+//     cout << "The longest palindromic substring is: " << result << endl;
+//     return 0;
+// }
+
+//function to find the sum of digits of a number
 #include <iostream>
-#include <string>
 using namespace std;
-string longestPalindromicSubstring(const string& str) {
-    int n = str.length();
-    if (n == 0) return "";
-    int start = 0, maxLength = 1;
-    for (int i = 0; i < n; i++) {
-        // Odd length palindromes
-        int low = i - 1;
-        int high = i + 1;   
-        while (low >= 0 && high < n && str[low] == str[high]) {
-            if (high - low + 1 > maxLength) {
-                start = low;
-                maxLength = high - low + 1;
-            }
-            low--;
-            high++;
-        }
-        // Even length palindromes
-        low = i;
-        high = i + 1;
-        while (low >= 0 && high < n && str[low] == str[high]) {
-            if (high - low + 1 > maxLength) {
-                start = low;    
-                maxLength = high - low + 1;
-            }
-            low--;
-            high++;
-        }
+int sumOfDigits(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;  
     }
-    return str.substr(start, maxLength);
+    return sum;
 }
 int main() {
-    string str;
-    cout << "Enter a string: "; 
-    getline(cin, str);
-    string result = longestPalindromicSubstring(str);
-    cout << "The longest palindromic substring is: " << result << endl;
+    int number;
+    cout << "Enter a number: "; 
+    cin >> number;
+    int result = sumOfDigits(number);
+    cout << "The sum of digits of " << number << " is " << result << "." << endl;
     return 0;
 }
