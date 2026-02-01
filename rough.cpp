@@ -1175,19 +1175,42 @@
 
 
 //function to find the factorial of a number
+// #include <iostream>
+// using namespace std;
+// unsigned long long factorial(int n) {
+//     if (n == 0 || n == 1) {
+//         return 1;
+//     }
+//     return n * factorial(n - 1);
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     unsigned long long result = factorial(number);
+//     cout << "The factorial of " << number << " is " << result << "." << endl;
+//     return 0;
+// }   
+
+
+//function to reverse a string
 #include <iostream>
+#include <string>
 using namespace std;
-unsigned long long factorial(int n) {
-    if (n == 0 || n == 1) {
-        return 1;
+string reverseString(const string& str) {
+    string reversedStr = str;
+    int n = reversedStr.length();
+    for (int i = 0; i < n / 2; i++) {
+        swap(reversedStr[i], reversedStr[n - i - 1]);
     }
-    return n * factorial(n - 1);
+    return reversedStr;
 }
 int main() {
-    int number;
-    cout << "Enter a number: "; 
-    cin >> number;
-    unsigned long long result = factorial(number);
-    cout << "The factorial of " << number << " is " << result << "." << endl;
+    string str;
+    cout << "Enter a string: "; 
+    getline(cin, str);
+    string result = reverseString(str);
+    cout << "The reversed string is: " << result << endl;
     return 0;
-}   
+}
+  
