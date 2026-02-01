@@ -1147,28 +1147,47 @@
 // }
 
 //function to check if a number is Armstrong number
+// #include <iostream>
+// #include <cmath>
+// using namespace std;    
+// bool isArmstrong(int num) {
+//     int originalNum = num;
+//     int sum = 0;
+//     int digits = log10(num) + 1;
+//     while (num > 0) {
+//         int digit = num % 10;
+//         sum += pow(digit, digits);
+//         num /= 10;
+//     }
+//     return sum == originalNum;
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     if (isArmstrong(number)) {
+//         cout << number << " is an Armstrong number." << endl;
+//     } else {
+//         cout << number << " is not an Armstrong number." << endl;
+//     }
+//     return 0;
+// }
+
+
+//function to find the factorial of a number
 #include <iostream>
-#include <cmath>
-using namespace std;    
-bool isArmstrong(int num) {
-    int originalNum = num;
-    int sum = 0;
-    int digits = log10(num) + 1;
-    while (num > 0) {
-        int digit = num % 10;
-        sum += pow(digit, digits);
-        num /= 10;
+using namespace std;
+unsigned long long factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
     }
-    return sum == originalNum;
+    return n * factorial(n - 1);
 }
 int main() {
     int number;
     cout << "Enter a number: "; 
     cin >> number;
-    if (isArmstrong(number)) {
-        cout << number << " is an Armstrong number." << endl;
-    } else {
-        cout << number << " is not an Armstrong number." << endl;
-    }
+    unsigned long long result = factorial(number);
+    cout << "The factorial of " << number << " is " << result << "." << endl;
     return 0;
-}
+}   
