@@ -1194,23 +1194,47 @@
 
 
 //function to reverse a string
+// #include <iostream>
+// #include <string>
+// using namespace std;
+// string reverseString(const string& str) {
+//     string reversedStr = str;
+//     int n = reversedStr.length();
+//     for (int i = 0; i < n / 2; i++) {
+//         swap(reversedStr[i], reversedStr[n - i - 1]);
+//     }
+//     return reversedStr;
+// }
+// int main() {
+//     string str;
+//     cout << "Enter a string: "; 
+//     getline(cin, str);
+//     string result = reverseString(str);
+//     cout << "The reversed string is: " << result << endl;
+//     return 0;
+// }
+  
+
+//function to check if a number is perfect number
 #include <iostream>
-#include <string>
 using namespace std;
-string reverseString(const string& str) {
-    string reversedStr = str;
-    int n = reversedStr.length();
-    for (int i = 0; i < n / 2; i++) {
-        swap(reversedStr[i], reversedStr[n - i - 1]);
+bool isPerfect(int num) {
+    int sum = 0;
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
     }
-    return reversedStr;
+    return sum == num;
 }
 int main() {
-    string str;
-    cout << "Enter a string: "; 
-    getline(cin, str);
-    string result = reverseString(str);
-    cout << "The reversed string is: " << result << endl;
+    int number;
+    cout << "Enter a number: "; 
+    cin >> number;
+    if (isPerfect(number)) {
+        cout << number << " is a perfect number." << endl;
+    } else {    
+        cout << number << " is not a perfect number." << endl;
+    }
     return 0;
 }
-  
