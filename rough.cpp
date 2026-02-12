@@ -1257,18 +1257,35 @@
 
 
 //binary to decimal conversion
-#include <iostream>
-using namespace std;
-int main() {
-    int n, decimal = 0, base = 1, last_digit;
-    cout << "Enter a binary number: ";
-    cin >> n;
-    while (n > 0) {
-        last_digit = n % 10;
-        decimal = decimal + last_digit * base;
-        n = n / 10;
-        base = base * 2;
-    }
-    cout << "The decimal equivalent is: " << decimal << endl;
-    return 0;
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     int n, decimal = 0, base = 1, last_digit;
+//     cout << "Enter a binary number: ";
+//     cin >> n;
+//     while (n > 0) {
+//         last_digit = n % 10;
+//         decimal = decimal + last_digit * base;
+//         n = n / 10;
+//         base = base * 2;
+//     }
+//     cout << "The decimal equivalent is: " << decimal << endl;
+//     return 0;
+// }
+
+
+//decimal to binary conversion
+#include <iostream> 
+using namespace std; 
+int main() { 
+    int n, binary = 0, base = 1, remainder; 
+    cout << "Enter a decimal number: "; 
+    cin >> n; 
+    while (n > 0) { 
+        remainder = n % 2; 
+        binary = binary + remainder * base; 
+        n = n / 2; base = base * 10; 
+    } 
+    cout << "The binary equivalent is: " << binary << endl; 
+    return 0; 
 }
