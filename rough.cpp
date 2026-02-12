@@ -1241,16 +1241,34 @@
 
 
 //function to find the sum of natural numbers up to n
+// #include <iostream>
+// using namespace std;
+// int sumOfNaturalNumbers(int n) {
+//     return n * (n + 1) / 2;
+// }
+// int main() {
+//     int number;
+//     cout << "Enter a number: "; 
+//     cin >> number;
+//     int result = sumOfNaturalNumbers(number);
+//     cout << "The sum of natural numbers up to " << number << " is " << result << "." << endl;
+//     return 0;
+// }
+
+
+//binary to decimal conversion
 #include <iostream>
 using namespace std;
-int sumOfNaturalNumbers(int n) {
-    return n * (n + 1) / 2;
-}
 int main() {
-    int number;
-    cout << "Enter a number: "; 
-    cin >> number;
-    int result = sumOfNaturalNumbers(number);
-    cout << "The sum of natural numbers up to " << number << " is " << result << "." << endl;
+    int n, decimal = 0, base = 1, last_digit;
+    cout << "Enter a binary number: ";
+    cin >> n;
+    while (n > 0) {
+        last_digit = n % 10;
+        decimal = decimal + last_digit * base;
+        n = n / 10;
+        base = base * 2;
+    }
+    cout << "The decimal equivalent is: " << decimal << endl;
     return 0;
 }
