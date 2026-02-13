@@ -1275,17 +1275,52 @@
 
 
 //decimal to binary conversion
-#include <iostream> 
-using namespace std; 
-int main() { 
-    int n, binary = 0, base = 1, remainder; 
-    cout << "Enter a decimal number: "; 
-    cin >> n; 
-    while (n > 0) { 
-        remainder = n % 2; 
-        binary = binary + remainder * base; 
-        n = n / 2; base = base * 10; 
-    } 
-    cout << "The binary equivalent is: " << binary << endl; 
-    return 0; 
+// #include <iostream> 
+// using namespace std; 
+// int main() { 
+//     int n, binary = 0, base = 1, remainder; 
+//     cout << "Enter a decimal number: "; 
+//     cin >> n; 
+//     while (n > 0) { 
+//         remainder = n % 2; 
+//         binary = binary + remainder * base; 
+//         n = n / 2; base = base * 10; 
+//     } 
+//     cout << "The binary equivalent is: " << binary << endl; 
+//     return 0; 
+// }
+
+
+//array rotation
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int k;
+    cout << "Enter the number of rotations: ";
+    cin >> k;
+    k = k % n; // In case k is greater than n
+    cout << "Original array: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    // Rotate the array
+    int temp[k];
+    for (int i = 0; i < k; i++) {
+        temp[i] = arr[i];
+    }
+    for (int i = k; i < n; i++) {
+        arr[i - k] = arr[i];
+    }
+    for (int i = 0; i < k; i++) {
+        arr[n - k + i] = temp[i];
+    }
+    cout << "Rotated array: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
 }
