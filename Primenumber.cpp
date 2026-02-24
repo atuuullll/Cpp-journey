@@ -372,26 +372,55 @@
 
 
 //Check if a number is a palindrome
+// #include <iostream>
+// using namespace std;
+// bool isPalindrome(int n){
+//     int original=n, reversed=0, remainder;  
+//     while(n>0){
+//         remainder=n%10;
+//         reversed=reversed*10+remainder;
+//         n=n/10;
+//     }
+//     return original==reversed;
+// }
+// int main(){
+//     int num;
+//     cout<<"Enter a number: ";
+//     cin>>num;
+//     if(isPalindrome(num)){
+//         cout<<num<<" is a palindrome number."<<endl;
+//     }
+//     else{
+//         cout<<num<<" is not a palindrome number."<<endl;
+//     }
+//     return 0;
+// }
+
+
+//Check if a string is a palindrome
 #include <iostream>
+#include <string>
 using namespace std;
-bool isPalindrome(int n){
-    int original=n, reversed=0, remainder;  
-    while(n>0){
-        remainder=n%10;
-        reversed=reversed*10+remainder;
-        n=n/10;
+bool isPalindrome(const string& str){
+    int left=0, right=str.length()-1;
+    while(left<right){
+        if(str[left]!=str[right]){
+            return false;
+        }
+        left++;
+        right--;
     }
-    return original==reversed;
+    return true;
 }
 int main(){
-    int num;
-    cout<<"Enter a number: ";
-    cin>>num;
-    if(isPalindrome(num)){
-        cout<<num<<" is a palindrome number."<<endl;
+    string str;
+    cout<<"Enter a string: ";
+    getline(cin, str);
+    if(isPalindrome(str)){
+        cout<<"\""<<str<<"\" is a palindrome string."<<endl;
     }
     else{
-        cout<<num<<" is not a palindrome number."<<endl;
+        cout<<"\""<<str<<"\" is not a palindrome string."<<endl;
     }
     return 0;
 }
